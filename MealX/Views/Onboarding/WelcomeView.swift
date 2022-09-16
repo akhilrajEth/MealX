@@ -43,11 +43,20 @@ extension WelcomeView {
                         .frame(width: 200, height: 200)
                         .padding()
                         .padding(.bottom, 0)
-
+                    
+                    
+                    Image("MealXImage")
+                        .resizable()
+                        .scaledToFit()
+                        .offset(y:-100)
+                        .frame(width: 200,height: 100)
+                    
                     Text("Let's get you started")
                         .font(.title)
                         .bold()
+                        .offset(y:-50)
 
+                    Spacer()
                 }
 
 

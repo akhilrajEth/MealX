@@ -4,7 +4,7 @@
 //
 //  Created by Karthik  Ramu on 9/15/22.
 //
-
+/*
 import SwiftUI
 
 struct SellHomeView: View {
@@ -18,3 +18,4 @@ struct SellHomeVIew_Previews: PreviewProvider {
         SellHomeView()
     }
 }
+*/
