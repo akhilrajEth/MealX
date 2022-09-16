@@ -12,9 +12,11 @@ struct QuickSelectView: View {
         VStack(spacing: 50) {
 
             // App title
-            Text("MealX")
-                .font(.title)
-                .fontWeight(.bold)
+            Image("MealXLogo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 250)
+                .offset(x:-10,y:-50)
 
 
             // Eat and sell button
