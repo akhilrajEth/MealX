@@ -29,6 +29,7 @@
 		7CCE65D428D2B93B003DE636 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65D328D2B93B003DE636 /* ButtonModifier.swift */; };
 		7CCE65D628D2BA16003DE636 /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65D528D2BA16003DE636 /* CustomInputField.swift */; };
 		7CCE65DB28D2BABF003DE636 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */; };
+		E93BC5F428D6853B009337C0 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93BC5F328D6853B009337C0 /* OrderDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		7CCE65D328D2B93B003DE636 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		7CCE65D528D2BA16003DE636 /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		E93BC5F328D6853B009337C0 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				7C6DD4C028D3E3FD00E8F57A /* SellHomeView.swift */,
+				E93BC5F328D6853B009337C0 /* OrderDetailView.swift */,
 			);
 			path = Sell;
 			sourceTree = "<group>";
@@ -138,10 +141,10 @@
 				7C92E9CE28D669CF00172CD5 /* Eat */,
 				7C6DD4BE28D3E3D200E8F57A /* Sell */,
 				7CCE65D328D2B93B003DE636 /* ButtonModifier.swift */,
-				7CCE65D528D2BA16003DE636 /* CustomInputField.swift */,
 				7CCE65D928D2BAA9003DE636 /* Onboarding */,
 				7C6DD4BA28D3DCC500E8F57A /* QuickSelectView.swift */,
 				7C6DD4C228D3E43B00E8F57A /* OrderCellView.swift */,
+				7CCE65D528D2BA16003DE636 /* CustomInputField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				7CCE65C228D2B8C9003DE636 /* ContentView.swift in Sources */,
 				7CCE65DB28D2BABF003DE636 /* AuthViewModel.swift in Sources */,
 				7C92E9D228D66A3900172CD5 /* EatProfileView.swift in Sources */,
+				E93BC5F428D6853B009337C0 /* OrderDetailView.swift in Sources */,
 				7CCE65D628D2BA16003DE636 /* CustomInputField.swift in Sources */,
 				7CCE65CE28D2B8D8003DE636 /* WelcomeView.swift in Sources */,
 				7CCE65C028D2B8C9003DE636 /* MealXApp.swift in Sources */,

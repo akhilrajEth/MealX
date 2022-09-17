@@ -55,7 +55,7 @@ struct QuickSelectView: View {
 
                         // Sell button
                         NavigationLink(destination: {
-
+                            SellHomeView()
 
                         }, label: {
 

@@ -2,14 +2,29 @@
 //  SellHomeView.swift
 //  MealX
 //
-//  Created by Karthik  Ramu on 9/15/22.
+//  Created by Akhil  Maheepathi on 9/17/22.
 //
 
 import SwiftUI
 
 struct SellHomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            ScrollView{
+                VStack(alignment: .leading){
+                    Text("Select an Order to fulfill and sell your meal exchange.")
+                        .padding(.leading)
+                    
+                    Spacer(minLength: 75)
+                    VStack(spacing: 60){
+                        ForEach(0..<3){ _ in
+                            OrderCellView()
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Orders")
+        }
     }
 }
 
