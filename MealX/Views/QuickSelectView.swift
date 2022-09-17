@@ -8,11 +8,43 @@
 import SwiftUI
 
 struct QuickSelectView: View {
+
+    // MARK: - PROPERTIES
+    @State private var eatView = false
+    @State private var sellView = false
+
+    // MARK: - BODY
     var body: some View {
+
+        Group {
+
+            if eatView == true {
+                EatView()
+            }
+
+            else if sellView == true {
+
+                SellView()
+            }
+
+            else {
+                mainQuickSelectView
+            }
+        }
+
+
+    }
+}
+
+
+
+extension QuickSelectView {
+
+    var mainQuickSelectView: some View {
 
         NavigationView{
 
-            VStack() {
+            VStack{
 
                 Spacer()
 
@@ -30,10 +62,9 @@ struct QuickSelectView: View {
                         Spacer()
 
                         // Eat button
-                        NavigationLink(destination: {
+                        Button(action: {
 
-                            EatView()
-
+                            eatView.toggle()
 
                         }, label: {
 
@@ -54,8 +85,9 @@ struct QuickSelectView: View {
                         Spacer()
 
                         // Sell button
-                        NavigationLink(destination: {
+                        Button(action: {
 
+                            sellView.toggle()
 
                         }, label: {
 
@@ -84,15 +116,9 @@ struct QuickSelectView: View {
 
             } //: VSTACK
 
-        }
-
-
-
-
-
+        } //: NAV VIEW
     }
 }
-
 
 struct QuickSelectView_Previews: PreviewProvider {
     static var previews: some View {

@@ -9,10 +9,15 @@ import SwiftUI
 
 struct EatOrderView: View {
 
+
     // MARK: - PROPERTIES
     var restaurants = ["Burrito Theory", "Bonny Castle"]
     @State private var selectedRestaurant = "Burrito Theory"
     @State private var mealType = ""
+
+    init (){
+        // UISegmentedControl.appearance().selectedSegmentTintColor = .green
+    }
 
     // MARK: - BODY
     var body: some View {
@@ -45,13 +50,14 @@ struct EatOrderView: View {
                             .padding()
                             .padding(.bottom, 0)
 
-                        Picker("", selection: $selectedRestaurant) {
+                        Picker("Where do you want your meal from?", selection: $selectedRestaurant) {
 
                             ForEach(restaurants, id: \.self) {
                                 Text($0)
                             }
                         }
                         .pickerStyle(.segmented)
+                        .foregroundColor(Color.green)
                         .padding()
                         .padding(.top, 0)
 
@@ -61,9 +67,48 @@ struct EatOrderView: View {
                     CustomInputField(fieldTitle: "What kind of meal do you want?", isSecureField: false, text: $mealType)
 
 
-                    VStack{
-                        
-                    }
+
+                    VStack(alignment: .leading) {
+
+                        HStack{
+
+                            VStack (alignment: .leading){
+                                Text("What do you want in your meal?")
+                                    .font(.title3)
+                                    .bold()
+
+
+                                Text("Please add any special instructions")
+                            } //: VSTACK
+
+                            Spacer()
+
+                        } //: HSTACK
+
+                        NavigationLink(destination: {
+
+                            // Segue to add order view
+                            EatOrderDetailsView(restaurant: selectedRestaurant, foodType: mealType)
+
+                        }, label: {
+
+                            // Bring user to eat view
+                            Text("Enter instructions")
+                                .fontWeight(.semibold)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .fill(.green)
+                                        .frame(width:170, height: 40)
+                                )
+                                .font(.callout)
+                                .foregroundColor(.white)
+                        })
+                        .padding()
+
+                    } //: VSTACK
+                    .padding()
+
+                    Spacer()
 
 
                 }

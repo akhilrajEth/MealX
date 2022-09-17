@@ -8,13 +8,36 @@
 import SwiftUI
 
 struct EatProfileView: View {
+
+    // MARK: - PROPERTIES
+    @EnvironmentObject var viewModel: AuthViewModel
+
+
+    // MARK: - BODY
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+
+        VStack{
+
+            Button(action: {
+                viewModel.signOut()
+
+            }, label: {
+
+                // Sign out button
+                Text("Sign Out")
+                    .fontWeight(.bold)
+                    .modifier(ButtonModifier())
+            })
+
+        } //: VSTACK
     }
 }
 
+
+// MARK: - PREVIEW
 struct EatProfileView_Previews: PreviewProvider {
     static var previews: some View {
         EatProfileView()
+            .environmentObject(AuthViewModel())
     }
 }
