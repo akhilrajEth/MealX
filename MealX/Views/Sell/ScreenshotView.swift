@@ -9,7 +9,17 @@ import SwiftUI
 
 struct ScreenshotView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("ScreenShot!")
+        Spacer()
+        NavigationLink(destination: {
+            CompleteView()
+        }, label:{
+            Text("Pay Seller")
+                .fontWeight(.bold)
+                .modifier(ButtonModifier())
+        })
+        Spacer()
+        
     }
 }
 

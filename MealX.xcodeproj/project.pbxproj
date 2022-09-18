@@ -19,10 +19,9 @@
 		7C92E9D028D669DA00172CD5 /* EatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92E9CF28D669DA00172CD5 /* EatView.swift */; };
 		7C92E9D228D66A3900172CD5 /* EatProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92E9D128D66A3900172CD5 /* EatProfileView.swift */; };
 		7C92E9D428D66B7E00172CD5 /* EatOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92E9D328D66B7E00172CD5 /* EatOrderView.swift */; };
-		7CA1649F28D67AB1006EC6ED /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1649E28D67AB1006EC6ED /* SellView.swift */; };
 		7CA164A128D67E4D006EC6ED /* EatOrderDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA164A028D67E4D006EC6ED /* EatOrderDetailsView.swift */; };
 		7CA164A328D6829F006EC6ED /* EatPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA164A228D6829F006EC6ED /* EatPaymentView.swift */; };
-		7CA164A528D684E9006EC6ED /* EatOrderCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA164A428D684E9006EC6ED /* EatOrderCompleteView.swift */; };
+		7CA164A528D684E9006EC6ED /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA164A428D684E9006EC6ED /* CompleteView.swift */; };
 		7CCE65C028D2B8C9003DE636 /* MealXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65BF28D2B8C9003DE636 /* MealXApp.swift */; };
 		7CCE65C228D2B8C9003DE636 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65C128D2B8C9003DE636 /* ContentView.swift */; };
 		7CCE65C428D2B8CB003DE636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CCE65C328D2B8CB003DE636 /* Assets.xcassets */; };
@@ -33,8 +32,10 @@
 		7CCE65D428D2B93B003DE636 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65D328D2B93B003DE636 /* ButtonModifier.swift */; };
 		7CCE65D628D2BA16003DE636 /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65D528D2BA16003DE636 /* CustomInputField.swift */; };
 		7CCE65DB28D2BABF003DE636 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */; };
-		E93BC5F428D6853B009337C0 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93BC5F328D6853B009337C0 /* OrderDetailView.swift */; };
-		E93BC5F628D68FCB009337C0 /* ScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93BC5F528D68FCB009337C0 /* ScreenshotView.swift */; };
+		E927A75A28D6C9EA007DC49E /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A75928D6C9EA007DC49E /* SellView.swift */; };
+		E927A75C28D6CDC8007DC49E /* ScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A75B28D6CDC8007DC49E /* ScreenshotView.swift */; };
+		E927A75E28D6CF15007DC49E /* SellProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A75D28D6CF15007DC49E /* SellProfileView.swift */; };
+		E93BC5F428D6853B009337C0 /* SellOrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93BC5F328D6853B009337C0 /* SellOrderDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,10 +47,9 @@
 		7C92E9CF28D669DA00172CD5 /* EatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatView.swift; sourceTree = "<group>"; };
 		7C92E9D128D66A3900172CD5 /* EatProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatProfileView.swift; sourceTree = "<group>"; };
 		7C92E9D328D66B7E00172CD5 /* EatOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatOrderView.swift; sourceTree = "<group>"; };
-		7CA1649E28D67AB1006EC6ED /* SellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellView.swift; sourceTree = "<group>"; };
 		7CA164A028D67E4D006EC6ED /* EatOrderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatOrderDetailsView.swift; sourceTree = "<group>"; };
 		7CA164A228D6829F006EC6ED /* EatPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatPaymentView.swift; sourceTree = "<group>"; };
-		7CA164A428D684E9006EC6ED /* EatOrderCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatOrderCompleteView.swift; sourceTree = "<group>"; };
+		7CA164A428D684E9006EC6ED /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteView.swift; sourceTree = "<group>"; };
 		7CCE65BC28D2B8C9003DE636 /* MealX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CCE65BF28D2B8C9003DE636 /* MealXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealXApp.swift; sourceTree = "<group>"; };
 		7CCE65C128D2B8C9003DE636 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,8 +61,10 @@
 		7CCE65D328D2B93B003DE636 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		7CCE65D528D2BA16003DE636 /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		E93BC5F328D6853B009337C0 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
-		E93BC5F528D68FCB009337C0 /* ScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotView.swift; sourceTree = "<group>"; };
+		E927A75928D6C9EA007DC49E /* SellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SellView.swift; path = ../../../../../../.Trash/SellView.swift; sourceTree = "<group>"; };
+		E927A75B28D6CDC8007DC49E /* ScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotView.swift; sourceTree = "<group>"; };
+		E927A75D28D6CF15007DC49E /* SellProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellProfileView.swift; sourceTree = "<group>"; };
+		E93BC5F328D6853B009337C0 /* SellOrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellOrderDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,16 +85,11 @@
 		7C6DD4BE28D3E3D200E8F57A /* Sell */ = {
 			isa = PBXGroup;
 			children = (
+				E927A75928D6C9EA007DC49E /* SellView.swift */,
+				E927A75D28D6CF15007DC49E /* SellProfileView.swift */,
 				7C6DD4C028D3E3FD00E8F57A /* SellHomeView.swift */,
-
-				7CA1649E28D67AB1006EC6ED /* SellView.swift */,
-
-				E93BC5F328D6853B009337C0 /* OrderDetailView.swift */,
-
-				E93BC5F528D68FCB009337C0 /* ScreenshotView.swift */,
-
-        ba65a04acabc2585800594c809f8973ddbc8d944
-        7c36f572bebfada0a470822fbef3f6339d2ef95c
+				E93BC5F328D6853B009337C0 /* SellOrderDetailView.swift */,
+				E927A75B28D6CDC8007DC49E /* ScreenshotView.swift */,
 			);
 			path = Sell;
 			sourceTree = "<group>";
@@ -105,7 +102,6 @@
 				7C92E9D328D66B7E00172CD5 /* EatOrderView.swift */,
 				7CA164A028D67E4D006EC6ED /* EatOrderDetailsView.swift */,
 				7CA164A228D6829F006EC6ED /* EatPaymentView.swift */,
-				7CA164A428D684E9006EC6ED /* EatOrderCompleteView.swift */,
 			);
 			path = Eat;
 			sourceTree = "<group>";
@@ -177,6 +173,7 @@
 				7CCE65CF28D2B8E1003DE636 /* SignUpViewOne.swift */,
 				7C6DD4AD28D3D3A900E8F57A /* SignUpViewTwo.swift */,
 				7CCE65D128D2B8EA003DE636 /* LogInView.swift */,
+				7CA164A428D684E9006EC6ED /* CompleteView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -267,7 +264,6 @@
 				7C92E9D028D669DA00172CD5 /* EatView.swift in Sources */,
 				7CCE65D428D2B93B003DE636 /* ButtonModifier.swift in Sources */,
 				7CCE65D228D2B8EA003DE636 /* LogInView.swift in Sources */,
-				7CA1649F28D67AB1006EC6ED /* SellView.swift in Sources */,
 				7C6DD4AE28D3D3A900E8F57A /* SignUpViewTwo.swift in Sources */,
 				7CA164A128D67E4D006EC6ED /* EatOrderDetailsView.swift in Sources */,
 				7CCE65D028D2B8E1003DE636 /* SignUpViewOne.swift in Sources */,
@@ -275,12 +271,14 @@
 				7CCE65C228D2B8C9003DE636 /* ContentView.swift in Sources */,
 				7CCE65DB28D2BABF003DE636 /* AuthViewModel.swift in Sources */,
 				7C92E9D228D66A3900172CD5 /* EatProfileView.swift in Sources */,
-				E93BC5F428D6853B009337C0 /* OrderDetailView.swift in Sources */,
+				E93BC5F428D6853B009337C0 /* SellOrderDetailView.swift in Sources */,
 				7CCE65D628D2BA16003DE636 /* CustomInputField.swift in Sources */,
-				E93BC5F628D68FCB009337C0 /* ScreenshotView.swift in Sources */,
 				7CCE65CE28D2B8D8003DE636 /* WelcomeView.swift in Sources */,
-				7CA164A528D684E9006EC6ED /* EatOrderCompleteView.swift in Sources */,
+				7CA164A528D684E9006EC6ED /* CompleteView.swift in Sources */,
+				E927A75A28D6C9EA007DC49E /* SellView.swift in Sources */,
 				7CCE65C028D2B8C9003DE636 /* MealXApp.swift in Sources */,
+				E927A75E28D6CF15007DC49E /* SellProfileView.swift in Sources */,
+				E927A75C28D6CDC8007DC49E /* ScreenshotView.swift in Sources */,
 				7C6DD4C328D3E43B00E8F57A /* OrderCellView.swift in Sources */,
 				7C92E9D428D66B7E00172CD5 /* EatOrderView.swift in Sources */,
 			);

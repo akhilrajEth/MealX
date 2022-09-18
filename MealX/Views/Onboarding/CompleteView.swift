@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EatOrderCompleteView: View {
+struct CompleteView: View {
 
     // MARK: - PROPERTIES
 
@@ -56,8 +56,8 @@ struct EatOrderCompleteView: View {
     }
 }
 
-struct EatOrderCompleteView_Previews: PreviewProvider {
+struct CompleteView_Previews: PreviewProvider {
     static var previews: some View {
-        EatOrderCompleteView()
+        CompleteView()
     }
 }

@@ -49,25 +49,25 @@ extension QuickSelectView {
                 Spacer()
 
                 VStack(spacing: 50){
-
+                    
                     // App title
                     Text("MealX")
                         .font(.title)
                         .fontWeight(.bold)
-
-
+                    
+                    
                     // Eat and sell button
                     HStack{
-
+                        
                         Spacer()
-
+                        
                         // Eat button
                         Button(action: {
-
+                            
                             eatView.toggle()
-
+                            
                         }, label: {
-
+                            
                             // Bring user to eat view
                             Text("Eat")
                                 .fontWeight(.semibold)
@@ -78,25 +78,21 @@ extension QuickSelectView {
                                 )
                                 .font(.callout)
                                 .foregroundColor(.white)
-
-
+                            
+                            
                         }) //: BUTTON
-
+                        
                         Spacer()
-
+                        
                         // Sell button
-<<<<<<< HEAD
+                        
                         Button(action: {
-
+                            
                             sellView.toggle()
-=======
-                        NavigationLink(destination: {
-                            SellHomeView()
->>>>>>> ba65a04acabc2585800594c809f8973ddbc8d944
-
+                            
                         }, label: {
-
-                            // Bring user to sell view
+                            
+                            // Bring user to eat view
                             Text("Sell")
                                 .fontWeight(.semibold)
                                 .background(
@@ -106,13 +102,14 @@ extension QuickSelectView {
                                 )
                                 .font(.callout)
                                 .foregroundColor(.white)
-
+                            
+                            
                         }) //: BUTTON
-
+                        
                         Spacer()
-
+                        
                     } //: HSTACK
-
+                    
                 }
 
 
@@ -130,3 +127,4 @@ struct QuickSelectView_Previews: PreviewProvider {
         QuickSelectView()
     }
 }
+                        

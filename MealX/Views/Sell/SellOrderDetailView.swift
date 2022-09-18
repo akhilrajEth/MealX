@@ -1,20 +1,14 @@
 //
-//  EatPaymentView.swift
+//  OrderDetailView.swift
 //  MealX
 //
-//  Created by Karthik  Ramu on 9/17/22.
+//  Created by Akhil Maheepathi on 9/17/22.
 //
 
 import SwiftUI
 
-struct EatPaymentView: View {
-
-    // MARK: - PROPERTIES
-    let mealDetails: String
-
-    // MARK: - BODY
+struct OrderDetailView: View {
     var body: some View {
-
         VStack{
 
             HStack{
@@ -59,24 +53,25 @@ struct EatPaymentView: View {
             } //: HSTACK
 
             HStack{
-
-                Text(mealDetails)
-                    .multilineTextAlignment(.leading)
-                    .padding()
-
-                Spacer()
+                VStack{
+                    ForEach(0..<5){_ in
+                        Text("- Item")
+                    }
+                    .padding(.leading)
+                }
+                Spacer(minLength: 100)
             }
-
+            Spacer()
             // Continue Button
             NavigationLink(destination: {
 
                 // Need to add paypal link as a button
 
                 // Segues user to order confirmation view
-                CompleteView()
+                ScreenshotView()
 
             }, label: {
-                Text("Pay Seller")
+                Text("Continue")
                     .fontWeight(.bold)
                     .modifier(ButtonModifier())
             })
@@ -92,10 +87,8 @@ struct EatPaymentView: View {
     }
 }
 
-
-// MARK: - PREVIEW
-struct EatPaymentView_Previews: PreviewProvider {
+struct OrderDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        EatPaymentView(mealDetails: "Lettuce, Cheese, Onions")
+        OrderDetailView()
     }
 }
