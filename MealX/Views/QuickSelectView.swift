@@ -85,9 +85,14 @@ extension QuickSelectView {
                         Spacer()
 
                         // Sell button
+<<<<<<< HEAD
                         Button(action: {
 
                             sellView.toggle()
+=======
+                        NavigationLink(destination: {
+                            SellHomeView()
+>>>>>>> ba65a04acabc2585800594c809f8973ddbc8d944
 
                         }, label: {
 
