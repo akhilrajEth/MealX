@@ -25,7 +25,7 @@ struct EatView: View {
             })
             .tag(1)
 
-            EatProfileView().tabItem({
+            EatOrderView().tabItem({
                 Image(systemName: "cart")
                 Text("Order")
             })
