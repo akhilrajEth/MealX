@@ -28,11 +28,22 @@ struct OrderDetailView: View {
                             .foregroundColor(.gray)
                             .padding(.leading)
                     } //: VSTACK
-                    Spacer(minLength: 75)
+                    Spacer(minLength: 20)
                     VStack(spacing: 10){
                         ForEach(0..<5){ _ in
                             Text(" - Item")
                         }
+                    }
+                    Spacer(minLength: 40)
+                    HStack{
+                        Spacer()
+                        NavigationLink(destination: {
+                            
+                        }, label: {
+                            Text("Continue")
+                                .modifier(ButtonModifier())
+                        })
+                        Spacer()
                     }
                 }
             }

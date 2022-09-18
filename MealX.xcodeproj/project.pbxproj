@@ -30,6 +30,7 @@
 		7CCE65D628D2BA16003DE636 /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65D528D2BA16003DE636 /* CustomInputField.swift */; };
 		7CCE65DB28D2BABF003DE636 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */; };
 		E93BC5F428D6853B009337C0 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93BC5F328D6853B009337C0 /* OrderDetailView.swift */; };
+		E93BC5F628D68FCB009337C0 /* ScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93BC5F528D68FCB009337C0 /* ScreenshotView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		7CCE65D528D2BA16003DE636 /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		E93BC5F328D6853B009337C0 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
+		E93BC5F528D68FCB009337C0 /* ScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				7C6DD4C028D3E3FD00E8F57A /* SellHomeView.swift */,
 				E93BC5F328D6853B009337C0 /* OrderDetailView.swift */,
+				E93BC5F528D68FCB009337C0 /* ScreenshotView.swift */,
 			);
 			path = Sell;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				7C92E9D228D66A3900172CD5 /* EatProfileView.swift in Sources */,
 				E93BC5F428D6853B009337C0 /* OrderDetailView.swift in Sources */,
 				7CCE65D628D2BA16003DE636 /* CustomInputField.swift in Sources */,
+				E93BC5F628D68FCB009337C0 /* ScreenshotView.swift in Sources */,
 				7CCE65CE28D2B8D8003DE636 /* WelcomeView.swift in Sources */,
 				7CCE65C028D2B8C9003DE636 /* MealXApp.swift in Sources */,
 				7C6DD4C328D3E43B00E8F57A /* OrderCellView.swift in Sources */,
@@ -385,7 +389,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MealX/Preview Content\"";
-				DEVELOPMENT_TEAM = Z2GRP6MX8V;
+				DEVELOPMENT_TEAM = U28DY7SUR7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -414,7 +418,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MealX/Preview Content\"";
-				DEVELOPMENT_TEAM = Z2GRP6MX8V;
+				DEVELOPMENT_TEAM = U28DY7SUR7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
