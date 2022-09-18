@@ -84,15 +84,15 @@
 			isa = PBXGroup;
 			children = (
 				7C6DD4C028D3E3FD00E8F57A /* SellHomeView.swift */,
-<<<<<<< HEAD
+
 				7CA1649E28D67AB1006EC6ED /* SellView.swift */,
-=======
+
 				E93BC5F328D6853B009337C0 /* OrderDetailView.swift */,
-<<<<<<< HEAD
+
 				E93BC5F528D68FCB009337C0 /* ScreenshotView.swift */,
-=======
->>>>>>> ba65a04acabc2585800594c809f8973ddbc8d944
->>>>>>> 7c36f572bebfada0a470822fbef3f6339d2ef95c
+
+        ba65a04acabc2585800594c809f8973ddbc8d944
+        7c36f572bebfada0a470822fbef3f6339d2ef95c
 			);
 			path = Sell;
 			sourceTree = "<group>";
