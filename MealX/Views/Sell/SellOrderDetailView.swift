@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct SellOrderDetailView: View {
+    let restaurant:String
+    let mealType:String
+    let orderDetails:String
+    
     var body: some View {
         VStack{
 
@@ -38,10 +42,10 @@ struct SellOrderDetailView: View {
             HStack {
                 VStack(alignment: .leading){
 
-                    Text("Bonny Castle")
+                    Text("\(restaurant)")
                         .font(.title2)
 
-                    Text("Sandwich")
+                    Text("\(mealType)")
                         .font(.title3)
                         .foregroundColor(.gray)
 
@@ -53,13 +57,12 @@ struct SellOrderDetailView: View {
             } //: HSTACK
 
             HStack{
-                VStack{
-                    ForEach(0..<5){_ in
-                        Text("- Item")
-                    }
-                    .padding(.leading)
-                }
-                Spacer(minLength: 100)
+
+                Text(orderDetails)
+                    .multilineTextAlignment(.leading)
+                    .padding()
+
+                Spacer()
             }
             Spacer()
             // Continue Button
@@ -89,6 +92,6 @@ struct SellOrderDetailView: View {
 
 struct OrderDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        SellOrderDetailView()
+        SellOrderDetailView(restaurant: "Bonny Castle", mealType: "Bowl", orderDetails: "Chicke, brown rice, vinegar sauce")
     }
 }

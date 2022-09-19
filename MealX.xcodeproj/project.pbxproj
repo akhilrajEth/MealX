@@ -38,6 +38,8 @@
 		7CCE65DB28D2BABF003DE636 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */; };
 		E927A75C28D6CDC8007DC49E /* SellAddScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A75B28D6CDC8007DC49E /* SellAddScreenshotView.swift */; };
 		E927A75E28D6CF15007DC49E /* SellProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A75D28D6CF15007DC49E /* SellProfileView.swift */; };
+		E927A76228D8DCBE007DC49E /* SellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A76128D8DCBE007DC49E /* SellViewModel.swift */; };
+		E927A76528D8E17A007DC49E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A76428D8E17A007DC49E /* Order.swift */; };
 		E93BC5F428D6853B009337C0 /* SellOrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93BC5F328D6853B009337C0 /* SellOrderDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		E927A75B28D6CDC8007DC49E /* SellAddScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellAddScreenshotView.swift; sourceTree = "<group>"; };
 		E927A75D28D6CF15007DC49E /* SellProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellProfileView.swift; sourceTree = "<group>"; };
+		E927A76128D8DCBE007DC49E /* SellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewModel.swift; sourceTree = "<group>"; };
+		E927A76428D8E17A007DC49E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		E93BC5F328D6853B009337C0 /* SellOrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellOrderDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +172,7 @@
 			children = (
 				7C39F99E28D815C100550205 /* Utilities */,
 				7C39F99B28D8153700550205 /* Service */,
+				E927A76328D8E133007DC49E /* Model */,
 				7CCE65D828D2BA92003DE636 /* Views */,
 				7CCE65D728D2BA81003DE636 /* ViewModel */,
 				7CCE65BF28D2B8C9003DE636 /* MealXApp.swift */,
@@ -192,6 +197,7 @@
 			children = (
 				7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */,
 				7C39F9A228D8188D00550205 /* EatViewModel.swift */,
+				E927A76128D8DCBE007DC49E /* SellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -217,6 +223,14 @@
 				7CCE65D128D2B8EA003DE636 /* LogInView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E927A76328D8E133007DC49E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E927A76428D8E17A007DC49E /* Order.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +326,7 @@
 				7CA164A128D67E4D006EC6ED /* EatOrderDetailsView.swift in Sources */,
 				7C39F99928D8119900550205 /* SellView.swift in Sources */,
 				7CCE65D028D2B8E1003DE636 /* SignUpViewOne.swift in Sources */,
+				E927A76528D8E17A007DC49E /* Order.swift in Sources */,
 				7C6DD4C128D3E3FD00E8F57A /* SellHomeView.swift in Sources */,
 				7CCE65C228D2B8C9003DE636 /* ContentView.swift in Sources */,
 				7C39F9A328D8188D00550205 /* EatViewModel.swift in Sources */,
@@ -324,6 +339,7 @@
 				E927A75E28D6CF15007DC49E /* SellProfileView.swift in Sources */,
 				E927A75C28D6CDC8007DC49E /* SellAddScreenshotView.swift in Sources */,
 				7C6DD4C328D3E43B00E8F57A /* OrderCellView.swift in Sources */,
+				E927A76228D8DCBE007DC49E /* SellViewModel.swift in Sources */,
 				7C92E9D428D66B7E00172CD5 /* EatOrderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

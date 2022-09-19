@@ -8,23 +8,27 @@
 import SwiftUI
 
 struct OrderCellView: View {
+    let restaurant:String
+    let mealType:String
+    let orderDetails:String
+    
     var body: some View {
 
         HStack{
             Spacer()
             VStack(alignment:.leading){
                 // Order place
-                Text("Bonny Castle")
+                Text("\(restaurant)")
                     .font(Font.title2.bold())
                     .foregroundColor(.black)
 
                 // Order type
-                Text("Bowl")
+                Text("\(mealType)")
                     .foregroundColor(.gray)
             } //: VSTACK
             Spacer(minLength: 100)
             NavigationLink {
-                SellOrderDetailView()
+                SellOrderDetailView(restaurant: restaurant, mealType: mealType, orderDetails: orderDetails)
             } label: {
                 Text("Fulfill")
                     .foregroundColor(Color.white)
@@ -45,6 +49,6 @@ struct OrderCellView: View {
 
 struct OrderCellView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderCellView()
+        OrderCellView(restaurant: "Bonny Castle", mealType: "Bowl", orderDetails: "Chicke, brown rice, Vinegar Sauce")
     }
 }

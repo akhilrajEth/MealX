@@ -85,7 +85,7 @@ extension QuickSelectView {
                         Spacer()
                         
                         // Sell button
-                        
+                
                         Button(action: {
                             
                             sellView.toggle()
