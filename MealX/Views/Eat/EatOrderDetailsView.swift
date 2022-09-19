@@ -70,7 +70,7 @@ struct EatOrderDetailsView: View {
             NavigationLink(destination: {
 
                 // Segue to payment view
-                EatPaymentView(mealDetails: detailText)
+                EatPaymentView(mealDetails: detailText, restaurant: restaurant, foodType: foodType)
 
             }, label: {
                 Text("Continue")

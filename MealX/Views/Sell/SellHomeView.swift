@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct SellHomeView: View {
+
+    // MARK: - PROPERTIES
+
+    // MARK: - BODY
     var body: some View {
+
         NavigationView{
             ScrollView{
                 VStack(alignment: .leading){
@@ -16,15 +21,19 @@ struct SellHomeView: View {
                         .padding(.leading)
                     
                     Spacer(minLength: 75)
+
                     VStack(spacing: 60){
                         ForEach(0..<3){ _ in
                             OrderCellView()
                         }
-                    }
-                }
-            }
+
+                    } //: VSTACK
+                } //: VSTACK
+
+            } //: SCROLL VIEW
             .navigationTitle("Orders")
-        }
+            
+        } //: NAV VIEW
     }
 }
 

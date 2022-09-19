@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OrderDetailView: View {
+struct SellOrderDetailView: View {
     var body: some View {
         VStack{
 
@@ -68,7 +68,7 @@ struct OrderDetailView: View {
                 // Need to add paypal link as a button
 
                 // Segues user to order confirmation view
-                ScreenshotView()
+                SellAddScreenshotView()
 
             }, label: {
                 Text("Continue")
@@ -89,6 +89,6 @@ struct OrderDetailView: View {
 
 struct OrderDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderDetailView()
+        SellOrderDetailView()
     }
 }

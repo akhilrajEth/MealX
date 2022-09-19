@@ -7,16 +7,18 @@
 
 import SwiftUI
 
-struct CompleteView: View {
+struct EatOrderCompleteView: View {
 
     // MARK: - PROPERTIES
+    let title: String
+    let message: String
 
     // MARK: - BODY
     var body: some View {
         VStack{
 
             HStack{
-                Text("You’re all done! You should see this completed order in your profile page. ")
+                Text(message)
                     .multilineTextAlignment(.leading)
                     .padding()
                     .padding(.top, 0)
@@ -48,16 +50,17 @@ struct CompleteView: View {
             })
             .padding()
 
-            Spacer() 
+            Spacer()
 
 
         } //: VSTACK
-        .navigationTitle("Complete!")
+        .navigationTitle(title)
     }
 }
 
-struct CompleteView_Previews: PreviewProvider {
+struct EatOrderCompleteView_Previews: PreviewProvider {
     static var previews: some View {
-        CompleteView()
+        EatOrderCompleteView(title: "Test", message: "I am just testing")
     }
 }
+

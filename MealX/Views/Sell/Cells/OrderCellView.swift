@@ -24,7 +24,7 @@ struct OrderCellView: View {
             } //: VSTACK
             Spacer(minLength: 100)
             NavigationLink {
-                OrderDetailView()
+                SellOrderDetailView()
             } label: {
                 Text("Fulfill")
                     .foregroundColor(Color.white)

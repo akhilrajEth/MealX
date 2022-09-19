@@ -11,6 +11,11 @@ struct EatPaymentView: View {
 
     // MARK: - PROPERTIES
     let mealDetails: String
+    let restaurant: String
+    let foodType: String
+    @State var paymentComplete = false
+    @ObservedObject var viewModel = EatViewModel()
+
 
     // MARK: - BODY
     var body: some View {
@@ -67,20 +72,29 @@ struct EatPaymentView: View {
                 Spacer()
             }
 
-            // Continue Button
             NavigationLink(destination: {
 
-                // Need to add paypal link as a button
-
-                // Segues user to order confirmation view
-                CompleteView()
+                EatOrderCompleteView(title: "Complete!", message: "You’re all done! You should see this completed order in your profile page.")
 
             }, label: {
-                Text("Pay Seller")
-                    .fontWeight(.bold)
-                    .modifier(ButtonModifier())
+
+                // Continue Button
+                Button(action: {
+
+                    // Need to add paypal link as a button
+
+                    // Upload data to Firebase
+                    viewModel.setOrderData(restaurant: restaurant, mealType: foodType, orderDetails: mealDetails, payment: paymentComplete)
+
+                }, label: {
+                    Text("Pay Seller")
+                        .fontWeight(.bold)
+                        .modifier(ButtonModifier())
+                })
+                .padding()
+
             })
-            .padding()
+
 
             Spacer(minLength: 100)
 
@@ -96,6 +110,6 @@ struct EatPaymentView: View {
 // MARK: - PREVIEW
 struct EatPaymentView_Previews: PreviewProvider {
     static var previews: some View {
-        EatPaymentView(mealDetails: "Lettuce, Cheese, Onions")
+        EatPaymentView(mealDetails: "Lettuce, Cheese, Onions", restaurant: "Bonny", foodType: "Sandwich")
     }
 }

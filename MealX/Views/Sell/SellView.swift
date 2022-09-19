@@ -1,17 +1,16 @@
 //
-//  EatView.swift
+//  SellView.swift
 //  MealX
 //
-//  Created by Karthik  Ramu on 9/17/22.
+//  Created by Karthik  Ramu on 9/18/22.
 //
 
 import SwiftUI
 
-struct EatView: View {
+struct SellView: View {
 
     // MARK: - PROPERTIES
     @State private var selection = 2
-
 
 
     // MARK: - BODY
@@ -19,24 +18,24 @@ struct EatView: View {
 
         TabView(selection: $selection){
 
-            EatProfileView().tabItem({
+            SellProfileView().tabItem({
                 Image(systemName: "person")
                 Text("Profile")
             })
             .tag(1)
 
-            EatOrderView().tabItem({
+            SellHomeView().tabItem({
                 Image(systemName: "cart")
                 Text("Order")
             })
             .tag(2)
 
-        } //: TAB VIEW 
+        } //: TAB VIEW
     }
 }
 
-struct EatView_Previews: PreviewProvider {
+struct SellView_Previews: PreviewProvider {
     static var previews: some View {
-        EatView()
+        SellView()
     }
 }
