@@ -46,6 +46,9 @@ class AuthViewModel: ObservableObject {
         }
 
     } //: FUNC REGISTER
+    
+    //Get User
+    
 
 
     // Login user
