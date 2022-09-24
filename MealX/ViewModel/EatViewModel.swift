@@ -22,7 +22,7 @@ class EatViewModel: ObservableObject {
         guard let uid = self.currentUser?.uid else { return }
 
         // Adds user's order into firebase
-        Firestore.firestore().collection("orders").document().setData(["restaurant": restaurant ?? "", "meal_type": mealType, "order_details": orderDetails, "payment": payment, "order_from": uid]){ _ in
+        Firestore.firestore().collection("orders").document().setData(["restaurant": restaurant ?? "", "meal_type": mealType, "order_details": orderDetails, "payment": payment, "order_from": uid, "pending": false]){ _ in
 
             print("User data successfully uploaded.")
         }

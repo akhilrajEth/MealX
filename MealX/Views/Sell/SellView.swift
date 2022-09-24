@@ -12,6 +12,7 @@ struct SellView: View {
     // MARK: - PROPERTIES
     @State private var selection = 2
 
+    
 
     // MARK: - BODY
     var body: some View {

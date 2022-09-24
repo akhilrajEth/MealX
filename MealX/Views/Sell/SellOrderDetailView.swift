@@ -11,6 +11,10 @@ struct SellOrderDetailView: View {
     let restaurant:String
     let mealType:String
     let orderDetails:String
+    var order:Order
+    
+    @ObservedObject private var viewModel = SellViewModel()
+
     
     var body: some View {
         VStack{
@@ -85,13 +89,18 @@ struct SellOrderDetailView: View {
 
         } //: VSTACK
         .navigationTitle("Order Details")
+        .onAppear(){
+            self.viewModel.updateStatus(uid: order.id, status:true)
+        }
 
 
     }
 }
+/*
 
 struct OrderDetailView_Previews: PreviewProvider {
     static var previews: some View {
         SellOrderDetailView(restaurant: "Bonny Castle", mealType: "Bowl", orderDetails: "Chicke, brown rice, vinegar sauce")
     }
 }
+*/

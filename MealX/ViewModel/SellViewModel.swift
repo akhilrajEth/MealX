@@ -30,8 +30,11 @@ class SellViewModel : ObservableObject{
                 let orderFrom = data["order_from"] as? String ?? ""
                 let payment = data["payment"] as? Bool ?? false
                 let restaurant = data["restaurant"] as? String ?? ""
+                let status = data["pending"] as? Bool ?? false
+                let uid = queryDocumentSnapshot.documentID
                 
-                return Order(mealType: mealType, orderDetails: orderDetails, orderFrom: orderFrom, payment: payment, restaurant: restaurant)
+                
+                return Order(id:uid,mealType: mealType, orderDetails: orderDetails, orderFrom: orderFrom, payment: payment, restaurant: restaurant, pending: status)
             }
 
         }
@@ -39,6 +42,21 @@ class SellViewModel : ObservableObject{
     }
     func setCompletedOrder(){
         
+    }
+    
+    func updateStatus(uid:String, status: Bool){
+        db.collection("orders").document(uid).updateData(["pending": status]){
+            error in
+            
+            if error == nil{
+                print("Success")
+            }
+            
+            else{
+                print("Here's the error: \(error?.localizedDescription)")
+                return
+            }
+        }
     }
     
 }

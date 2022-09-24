@@ -11,7 +11,6 @@ struct SellHomeView: View {
 
     // MARK: - PROPERTIES
     @ObservedObject private var viewModel = SellViewModel()
-
     // MARK: - BODY
     var body: some View {
 
@@ -19,30 +18,22 @@ struct SellHomeView: View {
                 VStack(alignment: .leading){
                     Text("Select an Order to fulfill and sell your meal exchange.")
                         .padding(.leading)
-                    /*
-                    List(viewModel.orders){ order in
-                        VStack(alignment: .leading, spacing: 60){
-                            OrderCellView(restaurant: order.restaurant, mealType: order.mealType)
-                        }
-                    }
-                    .onAppear(){
-                        self.viewModel.getOrderData()
-                    }
-                     */
+                   
                     ScrollView{
                         Spacer(minLength: 40)
                         VStack(spacing:60){
                             ForEach(viewModel.orders){
                                 order in
-                                VStack(alignment: .leading){
-                                    OrderCellView(restaurant: order.restaurant, mealType: order.mealType,orderDetails: order.orderDetails)
-                                }
-                                
+                                    VStack(alignment: .leading){
+                                        OrderCellView(restaurant: order.restaurant, mealType: order.mealType,orderDetails: order.orderDetails,order:order)
+                                    }
+
                             }
                         }
                     }
                     .onAppear(){
                         self.viewModel.getOrderData()
+                        //print(order.pending)
                     }
                 } //: VSTACK
             .navigationTitle("Orders")
