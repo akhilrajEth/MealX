@@ -88,10 +88,13 @@ struct SellOrderDetailView: View {
 
 
         } //: VSTACK
-        .navigationTitle("Order Details")
         .onAppear(){
             self.viewModel.updateStatus(uid: order.id, status:true)
+            //print(order.pending)
+
         }
+        .navigationTitle("Order Details")
+
 
 
     }

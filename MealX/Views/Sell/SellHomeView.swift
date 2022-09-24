@@ -27,13 +27,11 @@ struct SellHomeView: View {
                                     VStack(alignment: .leading){
                                         OrderCellView(restaurant: order.restaurant, mealType: order.mealType,orderDetails: order.orderDetails,order:order)
                                     }
-
                             }
                         }
                     }
                     .onAppear(){
                         self.viewModel.getOrderData()
-                        //print(order.pending)
                     }
                 } //: VSTACK
             .navigationTitle("Orders")
