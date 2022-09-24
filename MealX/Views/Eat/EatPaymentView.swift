@@ -85,6 +85,7 @@ struct EatPaymentView: View {
 
                     // Upload data to Firebase
                     viewModel.setOrderData(restaurant: restaurant, mealType: foodType, orderDetails: mealDetails, payment: paymentComplete)
+                    
 
                 }, label: {
                     Text("Pay Seller")

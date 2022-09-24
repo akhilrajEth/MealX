@@ -16,7 +16,7 @@ struct SellOrderDetailView: View {
         VStack{
 
             HStack{
-                Text("Pay the seller with the PayPal link below. ")
+                Text("Enter the following order in GrubHub")
                     .multilineTextAlignment(.leading)
                     .padding()
                     .padding(.top, 0)
