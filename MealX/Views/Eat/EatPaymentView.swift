@@ -19,6 +19,7 @@ struct EatPaymentView: View {
 
     // MARK: - BODY
     var body: some View {
+        
 
         VStack{
 
@@ -85,6 +86,16 @@ struct EatPaymentView: View {
 
                     // Upload data to Firebase
                     viewModel.setOrderData(restaurant: restaurant, mealType: foodType, orderDetails: mealDetails, payment: paymentComplete)
+                    
+                    guard let url = URL(string: "paypal.me/MealXUVA") else{return}
+                    
+                    if #available(iOS 10.0, *){
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                    else{
+                        UIApplication.shared.openURL(url)
+                    }
+                    
                     
 
                 }, label: {
