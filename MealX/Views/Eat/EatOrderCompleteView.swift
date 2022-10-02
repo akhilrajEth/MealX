@@ -10,6 +10,7 @@ import SwiftUI
 struct EatOrderCompleteView: View {
 
     // MARK: - PROPERTIES
+    @Environment (\.presentationMode) var presentationMode
     let title: String
     let message: String
 
@@ -18,15 +19,24 @@ struct EatOrderCompleteView: View {
         VStack{
 
             HStack{
-                Text(message)
-                    .multilineTextAlignment(.leading)
-                    .padding()
-                    .padding(.top, 0)
-                    .padding(.bottom, 0)
+
+                VStack(alignment: .leading){
+
+                    Text(title)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.leading)
+                        .padding()
+                        .padding(.top, 20)
+
+                    Text(message)
+                        .multilineTextAlignment(.leading)
+                        .padding()
+                        .padding(.top, 0)
+                }
 
                 Spacer()
             } //: HSTACK
-
 
             Spacer()
 

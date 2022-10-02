@@ -20,7 +20,7 @@
 		7C6DD4B928D3D7DE00E8F57A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7C6DD4B828D3D7DE00E8F57A /* FirebaseStorage */; };
 		7C6DD4BB28D3DCC500E8F57A /* QuickSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6DD4BA28D3DCC500E8F57A /* QuickSelectView.swift */; };
 		7C6DD4C128D3E3FD00E8F57A /* SellHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6DD4C028D3E3FD00E8F57A /* SellHomeView.swift */; };
-		7C6DD4C328D3E43B00E8F57A /* OrderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6DD4C228D3E43B00E8F57A /* OrderCellView.swift */; };
+		7C6DD4C328D3E43B00E8F57A /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6DD4C228D3E43B00E8F57A /* OrderCell.swift */; };
 		7C92E9D028D669DA00172CD5 /* EatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92E9CF28D669DA00172CD5 /* EatView.swift */; };
 		7C92E9D228D66A3900172CD5 /* EatProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92E9D128D66A3900172CD5 /* EatProfileView.swift */; };
 		7C92E9D428D66B7E00172CD5 /* EatOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92E9D328D66B7E00172CD5 /* EatOrderView.swift */; };
@@ -41,6 +41,9 @@
 		E927A76228D8DCBE007DC49E /* SellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A76128D8DCBE007DC49E /* SellViewModel.swift */; };
 		E927A76528D8E17A007DC49E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A76428D8E17A007DC49E /* Order.swift */; };
 		E93BC5F428D6853B009337C0 /* SellOrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93BC5F328D6853B009337C0 /* SellOrderDetailView.swift */; };
+		E973DB1828EA092C0079C68F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973DB1728EA092C0079C68F /* UserService.swift */; };
+		E973DB1A28EA09D00079C68F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973DB1928EA09D00079C68F /* User.swift */; };
+		E973DB1D28EA0A740079C68F /* EatOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973DB1C28EA0A740079C68F /* EatOrderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +56,7 @@
 		7C6DD4AF28D3D6BA00E8F57A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C6DD4BA28D3DCC500E8F57A /* QuickSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSelectView.swift; sourceTree = "<group>"; };
 		7C6DD4C028D3E3FD00E8F57A /* SellHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellHomeView.swift; sourceTree = "<group>"; };
-		7C6DD4C228D3E43B00E8F57A /* OrderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCellView.swift; sourceTree = "<group>"; };
+		7C6DD4C228D3E43B00E8F57A /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		7C92E9CF28D669DA00172CD5 /* EatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatView.swift; sourceTree = "<group>"; };
 		7C92E9D128D66A3900172CD5 /* EatProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatProfileView.swift; sourceTree = "<group>"; };
 		7C92E9D328D66B7E00172CD5 /* EatOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatOrderView.swift; sourceTree = "<group>"; };
@@ -75,6 +78,9 @@
 		E927A76128D8DCBE007DC49E /* SellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewModel.swift; sourceTree = "<group>"; };
 		E927A76428D8E17A007DC49E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		E93BC5F328D6853B009337C0 /* SellOrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellOrderDetailView.swift; sourceTree = "<group>"; };
+		E973DB1728EA092C0079C68F /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		E973DB1928EA09D00079C68F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E973DB1C28EA0A740079C68F /* EatOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatOrderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +101,7 @@
 		7C39F99A28D8130400550205 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				7C6DD4C228D3E43B00E8F57A /* OrderCellView.swift */,
+				7C6DD4C228D3E43B00E8F57A /* OrderCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -104,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				7C39F99C28D8154700550205 /* ImageUploader.swift */,
+				E973DB1728EA092C0079C68F /* UserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -141,6 +148,7 @@
 		7C92E9CE28D669CF00172CD5 /* Eat */ = {
 			isa = PBXGroup;
 			children = (
+				E973DB1B28EA0A3C0079C68F /* Cell */,
 				7C92E9CF28D669DA00172CD5 /* EatView.swift */,
 				7C92E9D128D66A3900172CD5 /* EatProfileView.swift */,
 				7C92E9D328D66B7E00172CD5 /* EatOrderView.swift */,
@@ -229,8 +237,17 @@
 			isa = PBXGroup;
 			children = (
 				E927A76428D8E17A007DC49E /* Order.swift */,
+				E973DB1928EA09D00079C68F /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E973DB1B28EA0A3C0079C68F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E973DB1C28EA0A740079C68F /* EatOrderCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E973DB1828EA092C0079C68F /* UserService.swift in Sources */,
 				7CA164A328D6829F006EC6ED /* EatPaymentView.swift in Sources */,
 				7C6DD4BB28D3DCC500E8F57A /* QuickSelectView.swift in Sources */,
 				7C39F9A028D815CF00550205 /* ImagePicker.swift in Sources */,
@@ -321,10 +339,12 @@
 				7CCE65D428D2B93B003DE636 /* ButtonModifier.swift in Sources */,
 				7CCE65D228D2B8EA003DE636 /* LogInView.swift in Sources */,
 				7C39F99D28D8154700550205 /* ImageUploader.swift in Sources */,
+				E973DB1A28EA09D00079C68F /* User.swift in Sources */,
 				7C39F99728D8112600550205 /* EatOrderCompleteView.swift in Sources */,
 				7C6DD4AE28D3D3A900E8F57A /* SignUpViewTwo.swift in Sources */,
 				7CA164A128D67E4D006EC6ED /* EatOrderDetailsView.swift in Sources */,
 				7C39F99928D8119900550205 /* SellView.swift in Sources */,
+				E973DB1D28EA0A740079C68F /* EatOrderCell.swift in Sources */,
 				7CCE65D028D2B8E1003DE636 /* SignUpViewOne.swift in Sources */,
 				E927A76528D8E17A007DC49E /* Order.swift in Sources */,
 				7C6DD4C128D3E3FD00E8F57A /* SellHomeView.swift in Sources */,
@@ -338,7 +358,7 @@
 				7CCE65C028D2B8C9003DE636 /* MealXApp.swift in Sources */,
 				E927A75E28D6CF15007DC49E /* SellProfileView.swift in Sources */,
 				E927A75C28D6CDC8007DC49E /* SellAddScreenshotView.swift in Sources */,
-				7C6DD4C328D3E43B00E8F57A /* OrderCellView.swift in Sources */,
+				7C6DD4C328D3E43B00E8F57A /* OrderCell.swift in Sources */,
 				E927A76228D8DCBE007DC49E /* SellViewModel.swift in Sources */,
 				7C92E9D428D66B7E00172CD5 /* EatOrderView.swift in Sources */,
 			);

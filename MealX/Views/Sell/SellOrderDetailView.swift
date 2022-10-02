@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct SellOrderDetailView: View {
+
+    // MARK: - PROPERTIES
     let restaurant:String
     let mealType:String
     let orderDetails:String
     var order:Order
     
+    
     @ObservedObject private var viewModel = SellViewModel()
 
-    
+
+    // MARK: - BODY
     var body: some View {
         VStack{
 
@@ -75,7 +79,7 @@ struct SellOrderDetailView: View {
                 // Need to add paypal link as a button
 
                 // Segues user to order confirmation view
-                SellAddScreenshotView()
+                SellAddScreenshotView(order: order)
 
             }, label: {
                 Text("Continue")
@@ -84,6 +88,7 @@ struct SellOrderDetailView: View {
             })
             .padding()
 
+
             Spacer(minLength: 100)
 
 
@@ -91,9 +96,12 @@ struct SellOrderDetailView: View {
         .onAppear(){
             self.viewModel.updateStatus(uid: order.id, status:true)
             //print(order.pending)
-
-        }
+        }/*
+        .onDisappear(){
+            self.viewModel.updateStatus(uid: order.id, status:0)
+        }*/
         .navigationTitle("Order Details")
+
 
 
 
@@ -101,9 +109,17 @@ struct SellOrderDetailView: View {
 }
 /*
 
+<<<<<<< HEAD
 struct OrderDetailView_Previews: PreviewProvider {
     static var previews: some View {
         SellOrderDetailView(restaurant: "Bonny Castle", mealType: "Bowl", orderDetails: "Chicke, brown rice, vinegar sauce")
     }
 }
 */
+
+// MARK: - PREVIEW
+//struct OrderDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SellOrderDetailView(restaurant: "Bonny Castle", mealType: "Bowl", orderDetails: "Chicke, brown rice, vinegar sauce")
+//    }
+//}

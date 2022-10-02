@@ -7,12 +7,15 @@
 
 import Foundation
 
-struct Order:Identifiable{
+struct Order:Identifiable {
+
     var id:String
     var mealType:String
     var orderDetails:String
     var orderFrom:String
-    var payment:Bool
+    var completed:Bool
     var restaurant:String
     var pending:Bool = false
+    var screenshotURL:String
+
 }

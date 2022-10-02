@@ -31,7 +31,7 @@ struct EatView: View {
             })
             .tag(2)
 
-        } //: TAB VIEW 
+        } //: TAB VIEW
     }
 }
 

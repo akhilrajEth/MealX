@@ -16,9 +16,11 @@ class AuthViewModel: ObservableObject {
     @Published var userSession = Auth.auth().currentUser
     @Published var didAuthenticateUser = false
     @Published var currentUser: User?
+    private let service = UserService()
 
     init(){
         // Sets user session to current user
+        self.fetchUser()
         self.userSession = Auth.auth().currentUser
     }
 
@@ -48,7 +50,14 @@ class AuthViewModel: ObservableObject {
     } //: FUNC REGISTER
     
     //Get User
-    
+    func fetchUser(){
+        guard let uid = self.userSession?.uid else { return }
+
+        service.fetchUser(withUid: uid) { user in
+            self.currentUser = user
+        }
+
+    } // FETCH USER
 
 
     // Login user
@@ -77,7 +86,19 @@ class AuthViewModel: ObservableObject {
 
     } //: FUNC SIGNOUT
 
-    
+    func deleteUser(){
+        Auth.auth().currentUser?.delete { error in
+                 if let error = error {
+                     print("error deleting user - \(error)")
+                 } else {
+                     print("Account deleted")
+                 }
+             }
+
+        userSession = nil
+
+    } //: DELETE USER
+
 }
 
 

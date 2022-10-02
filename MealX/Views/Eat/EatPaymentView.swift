@@ -13,13 +13,13 @@ struct EatPaymentView: View {
     let mealDetails: String
     let restaurant: String
     let foodType: String
-    @State var paymentComplete = false
+    @State var showCompleteView = false
+    @State var orderComplete = false
     @ObservedObject var viewModel = EatViewModel()
 
 
     // MARK: - BODY
     var body: some View {
-        
 
         VStack{
 
@@ -73,39 +73,27 @@ struct EatPaymentView: View {
                 Spacer()
             }
 
-            NavigationLink(destination: {
+            Button(action: {
 
-                EatOrderCompleteView(title: "Complete!", message: "You’re all done! You should see this completed order in your profile page.")
+                // Add PayPal link to button
+
+                // Set order data
+                viewModel.setOrderData(restaurant: restaurant, mealType: foodType, orderDetails: mealDetails, completed: orderComplete)
+
+                // Toggle the show complete var
+                showCompleteView.toggle()
 
             }, label: {
 
-                // Continue Button
-                Button(action: {
-
-                    // Need to add paypal link as a button
-
-                    // Upload data to Firebase
-                    viewModel.setOrderData(restaurant: restaurant, mealType: foodType, orderDetails: mealDetails, payment: paymentComplete)
-                    
-                    guard let url = URL(string: "paypal.me/MealXUVA") else{return}
-                    
-                    if #available(iOS 10.0, *){
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                    }
-                    else{
-                        UIApplication.shared.openURL(url)
-                    }
-                    
-                    
-
-                }, label: {
-                    Text("Pay Seller")
-                        .fontWeight(.bold)
-                        .modifier(ButtonModifier())
-                })
-                .padding()
+                Text("Pay")
+                    .fontWeight(.bold)
+                    .modifier(ButtonModifier())
 
             })
+            .sheet(isPresented: $showCompleteView, content: {
+                EatOrderCompleteView(title: "Success!", message: "You’re all done! You can view the order status in your profile page.")
+            })
+            .padding()
 
 
             Spacer(minLength: 100)

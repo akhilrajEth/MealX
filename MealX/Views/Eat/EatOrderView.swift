@@ -15,9 +15,6 @@ struct EatOrderView: View {
     @State private var selectedRestaurant = "Burrito Theory"
     @State private var mealType = ""
 
-    init (){
-        // UISegmentedControl.appearance().selectedSegmentTintColor = .green
-    }
 
     // MARK: - BODY
     var body: some View {
@@ -65,7 +62,6 @@ struct EatOrderView: View {
 
                     // Text fields for user inputs
                     CustomInputField(fieldTitle: "What kind of meal do you want?", isSecureField: false, text: $mealType)
-
 
 
                     VStack(alignment: .leading) {

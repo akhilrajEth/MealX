@@ -10,13 +10,18 @@ import SwiftUI
 struct SellAddScreenshotView: View {
 
     // MARK: - PROPERTIES
+    @ObservedObject private var viewModel = SellViewModel()
+    @ObservedObject var eatViewModel = EatViewModel()
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @State var showCompleteView = false
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
     @State private var postImage: Image?
+    let order: Order
 
     // MARK: - BODY
     var body: some View {
-
+        
         VStack {
 
             // Subtitle
@@ -30,6 +35,7 @@ struct SellAddScreenshotView: View {
                 Spacer()
 
             } //: HSTACK
+
 
             Spacer()
 
@@ -74,35 +80,67 @@ struct SellAddScreenshotView: View {
             if let selectedImage = selectedImage {
 
                 // Done button
-                NavigationLink(destination: {
+                Button(action: {
 
-                    // Segue to order fullfilled page
-                    EatOrderCompleteView(title: "Success!", message: "You’re all done! You should see this fullfilled order in your profile page." )
+                    // Upload screenshot data to Firebase Storage
+                    addScreenshot()
+
+                    // Move order into user's private collection of orders
+                    viewModel.moveOrder(order: order, userUID: authViewModel.currentUser?.id ?? "")
+
+                    // Toggle the completed var in the order object
+                    updateComplete()
+
+                    // Toggle the show complete var
+                    showCompleteView.toggle()
 
                 }, label: {
-                    Text("Continue")
+
+                    Text("Fullfill")
                         .fontWeight(.bold)
                         .modifier(ButtonModifier())
+                })
+                .sheet(isPresented: $showCompleteView, content: {
+                    EatOrderCompleteView(title: "Complete!", message: "You’re all done! You should see this completed order in your profile page." )
                 })
             }
 
             Spacer()
 
-
-            
         } //: VSTACK
         .navigationTitle("Add Screenshot")
         
     }
 
+    func addScreenshot() {
+
+        // Add screenshot to firebase
+        viewModel.uploadScreenshot(image: selectedImage!, uid: order.id)
+    } //: ADD SCREENSHOT
+
     func loadImage() {
         guard let selectedImage = selectedImage else {return}
         postImage = Image(uiImage: selectedImage)
-    }
+    } //: LOAD IMAGE
+
+    func updateComplete(){
+
+        eatViewModel.fetchPrivateOrders(uid: order.orderFrom)
+
+        for eatOrder in eatViewModel.privateEaterOrders {
+            if eatOrder.orderFrom == order.orderFrom {
+                
+                viewModel.updateComplete(order: order, status: true)
+            }
+        }
+    } //: UPDATE COMPLETe
+
 }
 
-struct ScreenshotView_Previews: PreviewProvider {
-    static var previews: some View {
-        SellAddScreenshotView()
-    }
-}
+
+// MARK: - PREVIEW
+//struct ScreenshotView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SellAddScreenshotView(order: order)
+//    }
+//}

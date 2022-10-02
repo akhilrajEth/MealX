@@ -16,31 +16,38 @@ struct SellHomeView: View {
 
         NavigationView{
                 VStack(alignment: .leading){
-                    Text("Select an Order to fulfill and sell your meal exchange.")
-                        .padding(.leading)
-                   
+
+                    HStack{
+                        Text("Select an Order to fulfill and sell your meal exchange.")
+                            .padding()
+                        Spacer()
+                    } //: HSTACK
+
                     ScrollView{
-                        Spacer(minLength: 40)
-                        VStack(spacing:60){
+                        Spacer(minLength: 20)
+                        VStack(spacing:10){
                             ForEach(viewModel.orders){
                                 order in
-                                    VStack(alignment: .leading){
-                                        OrderCellView(restaurant: order.restaurant, mealType: order.mealType,orderDetails: order.orderDetails,order:order)
-                                    }
+                                    OrderCell(restaurant: order.restaurant, mealType: order.mealType,orderDetails: order.orderDetails,order:order)
                             }
                         }
                     }
                     .onAppear(){
                         self.viewModel.getOrderData()
+
                     }
                 } //: VSTACK
             .navigationTitle("Orders")
+
            
             
         } //: NAV VIEW
+        .navigationViewStyle(.stack)
     }
 }
 
+
+// MARK: - PREVIEW
 struct SellHomeView_Previews: PreviewProvider {
     static var previews: some View {
         SellHomeView()
