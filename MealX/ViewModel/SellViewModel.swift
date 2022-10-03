@@ -11,7 +11,8 @@ import Firebase
 import UIKit
 
 class SellViewModel : ObservableObject{
-
+    
+    @Published var currentUser = Auth.auth().currentUser
     @Published var orders = [Order]()
     @Published var sellerOrders = [Order]()
     private var db = Firestore.firestore()
@@ -73,8 +74,9 @@ class SellViewModel : ObservableObject{
     } //: FUNC UPLOAD SCREENSHOT
 
     
-    func updateStatus(uid:String, status: Bool){
-        db.collection("orders").document(uid).updateData(["pending": status]){
+    func updateStatus(orderID:String, status: Bool){
+        guard let uid = self.currentUser?.uid else { return }
+        db.collection("orders").document(orderID).updateData(["pending": status]){
             error in
             
             if error == nil{
@@ -86,6 +88,20 @@ class SellViewModel : ObservableObject{
                 return
             }
         }
+        
+        db.collection("users").document(uid).collection("requested_orders").document(orderID).updateData(["pending": status]){
+            error in
+            
+            if error == nil{
+                print("Success")
+            }
+            
+            else{
+                print("Here's the error: \(error?.localizedDescription)")
+                return
+            }
+        }
+        
     } //: FUNC UPDATE STATUS
 
     func updateComplete(order: Order, status: Bool){
@@ -113,7 +129,7 @@ class SellViewModel : ObservableObject{
     func moveOrder(order: Order, userUID: String){
 
         // Add data to seller's completed orders
-        db.collection("users").document(userUID).collection("completed_orders").document().setData(["restaurant": order.restaurant ?? "", "meal_type": order.mealType, "order_details": order.orderDetails, "completed": order.completed, "order_from": order.orderFrom, "pending": order.pending]){ _ in
+        db.collection("users").document(userUID).collection("completed_orders").document(order.id).setData(["restaurant": order.restaurant ?? "", "meal_type": order.mealType, "order_details": order.orderDetails, "completed": order.completed, "order_from": order.orderFrom, "pending": order.pending]){ _ in
 
             print("User data successfully uploaded.")
         }

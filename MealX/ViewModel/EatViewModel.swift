@@ -24,15 +24,15 @@ class EatViewModel: ObservableObject {
 
         // Retrieves uid of current user
         guard let uid = self.currentUser?.uid else { return }
-
+        let docID = UUID().uuidString
         // Adds user's order into firebase
-        Firestore.firestore().collection("orders").document().setData(["restaurant": restaurant ?? "", "meal_type": mealType, "order_details": orderDetails, "completed": completed, "order_from": uid, "pending": false]){ _ in
+        Firestore.firestore().collection("orders").document(docID).setData(["restaurant": restaurant ?? "", "meal_type": mealType, "order_details": orderDetails, "completed": completed, "order_from": uid, "pending": false]){ _ in
 
             print("User data successfully uploaded.")
         }
 
         // Add user's order into private collection
-        Firestore.firestore().collection("users").document(uid).collection("requested_orders").document().setData(["restaurant": restaurant ?? "", "meal_type": mealType, "order_details": orderDetails, "completed": completed, "order_from": uid, "pending": false]){ _ in
+        Firestore.firestore().collection("users").document(uid).collection("requested_orders").document(docID).setData(["restaurant": restaurant ?? "", "meal_type": mealType, "order_details": orderDetails, "completed": completed, "order_from": uid, "pending": false]){ _ in
 
             print("User data successfully uploaded.")
         }

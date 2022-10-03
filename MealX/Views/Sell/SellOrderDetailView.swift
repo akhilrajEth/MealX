@@ -94,7 +94,7 @@ struct SellOrderDetailView: View {
 
         } //: VSTACK
         .onAppear(){
-            self.viewModel.updateStatus(uid: order.id, status:true)
+            self.viewModel.updateStatus(orderID: order.id, status:true)
             //print(order.pending)
         }/*
         .onDisappear(){

@@ -73,7 +73,7 @@ struct OrderCell: View {
             .stroke(Color.gray, lineWidth: 1)
             .frame(width: 350,height: 90))
         .onAppear(){
-            self.viewModel.updateStatus(uid: order.id, status: false)
+            self.viewModel.updateStatus(orderID: order.id, status: false)
         }
     }
 }
