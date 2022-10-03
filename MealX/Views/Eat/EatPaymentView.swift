@@ -21,18 +21,39 @@ struct EatPaymentView: View {
     // MARK: - BODY
     var body: some View {
 
-        VStack{
-
+        VStack(spacing: 0){
+            Spacer()
             HStack{
-                Text("Pay the seller with the PayPal link below. ")
+                Text("Pay the seller with PayPal or Venmo!")
                     .multilineTextAlignment(.leading)
                     .padding()
                     .padding(.top, 0)
                     .padding(.bottom, 0)
-
-                Spacer()
-
             } //: HSTACK
+            HStack{
+                Spacer()
+                Image("paypalLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width:100,height:100)
+                
+                Spacer(minLength:80)
+                Link("paypal.me/MealXUVA", destination: .init(string: "https://paypal.me/MealXUVA")!)
+                    .font(.title3)
+                    .foregroundColor(.orange)
+                Spacer()
+            }
+            HStack{
+                Spacer()
+                Image("venmoLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100,height: 100)
+                Spacer(minLength: 200)
+                Text("@MealX")
+                Spacer()
+            }
+            
 
             // Price
             HStack{
@@ -85,7 +106,7 @@ struct EatPaymentView: View {
 
             }, label: {
 
-                Text("Pay")
+                Text("I Paid")
                     .fontWeight(.bold)
                     .modifier(ButtonModifier())
 
@@ -94,13 +115,15 @@ struct EatPaymentView: View {
                 EatOrderCompleteView(title: "Success!", message: "You’re all done! You can view the order status in your profile page.")
             })
             .padding()
+            Text("* once payment is confirmed and order is fufilled you will receive a screenshot containing order information *")
+                .frame(width:300,height:100)
 
 
             Spacer(minLength: 100)
 
 
         } //: VSTACK
-        .navigationTitle("Order Details")
+       // .navigationTitle("Order Details")
 
 
     }

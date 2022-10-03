@@ -47,6 +47,7 @@ struct EatOrderCell: View {
                                 .fill(.blue)
                                 .frame(width:100, height: 30)
                         )
+                    
                 }) //: NAV LINK
                 .disabled(true)
 
