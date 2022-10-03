@@ -53,6 +53,7 @@ struct EatPaymentView: View {
                 Text("@MealX")
                 Spacer()
             }
+            .offset(y:-50)
             
 
             // Price
@@ -64,6 +65,7 @@ struct EatPaymentView: View {
 
                 Spacer()
             } //: HSTACK
+            .offset(y:-60)
 
 
 
@@ -84,6 +86,7 @@ struct EatPaymentView: View {
 
                 Spacer()
             } //: HSTACK
+            .offset(y:-80)
 
             HStack{
 
@@ -93,6 +96,7 @@ struct EatPaymentView: View {
 
                 Spacer()
             }
+            .offset(y:-90)
 
             Button(action: {
 
