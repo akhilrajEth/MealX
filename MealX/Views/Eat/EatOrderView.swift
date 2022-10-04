@@ -41,7 +41,7 @@ struct EatOrderView: View {
 
                     VStack(alignment: .leading) {
 
-                        Text("Where do you want your meal from?")
+                        Text("1. Where do you want your meal from?")
                             .font(.title3)
                             .bold()
                             .padding()
@@ -61,7 +61,7 @@ struct EatOrderView: View {
                     } //: VSTACK
 
                     // Text fields for user inputs
-                    CustomInputField(fieldTitle: "What kind of meal do you want?", isSecureField: false, text: $mealType)
+                    CustomInputField(fieldTitle: "2. What kind of meal do you want?", isSecureField: false, text: $mealType)
 
 
                     VStack(alignment: .leading) {
@@ -69,7 +69,7 @@ struct EatOrderView: View {
                         HStack{
 
                             VStack (alignment: .leading){
-                                Text("What do you want in your meal?")
+                                Text("3. What do you want in your meal?")
                                     .font(.title3)
                                     .bold()
 

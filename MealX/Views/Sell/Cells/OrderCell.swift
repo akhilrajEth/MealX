@@ -35,7 +35,7 @@ struct OrderCell: View {
             } //: VSTACK
             .padding()
             
-            Spacer(minLength: 100)
+            Spacer()
             
             
         
@@ -69,12 +69,15 @@ struct OrderCell: View {
             
             
         }
-        .background(RoundedRectangle(cornerRadius: 10, style: .continuous)
-            .stroke(Color.gray, lineWidth: 1)
-            .frame(width: 350,height: 90))
         .onAppear(){
             self.viewModel.updateStatus(orderID: order.id, status: false)
         }
+        .background(
+
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
+            .stroke(Color.gray, lineWidth: 0.5)
+            .frame(width: 350,height: 90)
+        )
     }
 }
 

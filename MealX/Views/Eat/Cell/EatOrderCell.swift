@@ -56,7 +56,8 @@ struct EatOrderCell: View {
                 NavigationLink(destination: {
 
                     // Segue to more info
-
+                    PreviewScreenshotView(order: order)
+                    
                 }, label: {
                     Text("Completed")
                         .foregroundColor(Color.white)
@@ -74,6 +75,12 @@ struct EatOrderCell: View {
 
 
         } //: HSTACK
+        .background(
+
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
+            .stroke(Color.gray, lineWidth: 0.5)
+            .frame(width: 350,height: 90)
+        )
 
     }
 }

@@ -47,7 +47,7 @@ class SellViewModel : ObservableObject{
         
     } //: GET ORDER DATA
 
-    func uploadScreenshot(image: UIImage, uid: String){
+    func uploadScreenshot(image: UIImage, uid: String, order: Order){
 
         // Create a reference to the database
         let db = Firestore.firestore()
@@ -63,11 +63,13 @@ class SellViewModel : ObservableObject{
                     print("Success!")
                 } else {
                     // Handle the error
-                    print("Here's the error: \(error?.localizedDescription)")
+                    print("Here's the error: \(String(describing: error?.localizedDescription))")
                     return
                 }
 
             }
+
+            self.updateScreenshot(url: screenshotURL, order: order)
 
         } //: ImageUploader
 
@@ -97,7 +99,7 @@ class SellViewModel : ObservableObject{
             }
             
             else{
-                print("Here's the error: \(error?.localizedDescription)")
+                print("Here's the error: \(String(describing: error?.localizedDescription))")
                 return
             }
         }
@@ -105,7 +107,6 @@ class SellViewModel : ObservableObject{
     } //: FUNC UPDATE STATUS
 
     func updateComplete(order: Order, status: Bool){
-
 
         db.collection("users").document(order.orderFrom).collection("requested_orders").document(order.id).updateData(["completed": status]){
             error in
@@ -115,25 +116,43 @@ class SellViewModel : ObservableObject{
             }
 
             else{
-                print("Here's the error: \(error?.localizedDescription)")
+                print("Here's the error: \(String(describing: error?.localizedDescription))")
                 return
             }
         }
 
 
-
-
-
     } //: FUNC UPDATE STATUS
+
+    func updateScreenshot(url: String, order: Order){
+
+        db.collection("users").document(order.orderFrom).collection("requested_orders").document(order.id).updateData(["screenshot_url": url]){
+            error in
+
+            if error == nil{
+                print("Success")
+            }
+
+            else{
+                print("Here's the error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+        }
+
+
+    } //: UPDATE SC
 
     func moveOrder(order: Order, userUID: String){
 
         // Add data to seller's completed orders
-        db.collection("users").document(userUID).collection("completed_orders").document(order.id).setData(["restaurant": order.restaurant ?? "", "meal_type": order.mealType, "order_details": order.orderDetails, "completed": order.completed, "order_from": order.orderFrom, "pending": order.pending]){ _ in
+        db.collection("users").document(userUID).collection("completed_orders").document(order.id).setData(["restaurant": order.restaurant, "meal_type": order.mealType, "order_details": order.orderDetails, "completed": order.completed, "order_from": order.orderFrom, "pending": order.pending]){ _ in
 
             print("User data successfully uploaded.")
         }
 
+    } //: FUNC MOVE ORDER
+
+    func deleteOrder(order: Order, userUID: String){
 
         // Delete data from main collection
         db.collection("orders").document(order.id).delete() { err in
@@ -143,8 +162,7 @@ class SellViewModel : ObservableObject{
                 print("Document successfully removed!")
             }
         }
-
-    } //: FUNC MOVE ORDER
+    } //: DELETE ORDER
 
     // Fetch seller's completed orders
     func fetchSellerOrders(sellerUID: String){

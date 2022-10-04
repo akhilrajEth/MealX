@@ -30,6 +30,7 @@ struct SellHomeView: View {
                                 order in
                                     OrderCell(restaurant: order.restaurant, mealType: order.mealType,orderDetails: order.orderDetails,order:order)
                             }
+                            .padding()
                         }
                     }
                     .onAppear(){

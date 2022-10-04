@@ -36,6 +36,8 @@
 		7CCE65D428D2B93B003DE636 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65D328D2B93B003DE636 /* ButtonModifier.swift */; };
 		7CCE65D628D2BA16003DE636 /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65D528D2BA16003DE636 /* CustomInputField.swift */; };
 		7CCE65DB28D2BABF003DE636 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */; };
+		7CD3013728EBB524009980DA /* PreviewScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3013628EBB524009980DA /* PreviewScreenshotView.swift */; };
+		7CD3013A28EBB689009980DA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7CD3013928EBB689009980DA /* Kingfisher */; };
 		E927A75C28D6CDC8007DC49E /* SellAddScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A75B28D6CDC8007DC49E /* SellAddScreenshotView.swift */; };
 		E927A75E28D6CF15007DC49E /* SellProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A75D28D6CF15007DC49E /* SellProfileView.swift */; };
 		E927A76228D8DCBE007DC49E /* SellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A76128D8DCBE007DC49E /* SellViewModel.swift */; };
@@ -73,6 +75,7 @@
 		7CCE65D328D2B93B003DE636 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		7CCE65D528D2BA16003DE636 /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		7CD3013628EBB524009980DA /* PreviewScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenshotView.swift; sourceTree = "<group>"; };
 		E927A75B28D6CDC8007DC49E /* SellAddScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellAddScreenshotView.swift; sourceTree = "<group>"; };
 		E927A75D28D6CF15007DC49E /* SellProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellProfileView.swift; sourceTree = "<group>"; };
 		E927A76128D8DCBE007DC49E /* SellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewModel.swift; sourceTree = "<group>"; };
@@ -92,6 +95,7 @@
 				7C6DD4B928D3D7DE00E8F57A /* FirebaseStorage in Frameworks */,
 				7C6DD4B528D3D7DE00E8F57A /* FirebaseFirestore in Frameworks */,
 				7C6DD4B728D3D7DE00E8F57A /* FirebaseFirestoreSwift in Frameworks */,
+				7CD3013A28EBB689009980DA /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +143,7 @@
 				7C39F99828D8119900550205 /* SellView.swift */,
 				E927A75D28D6CF15007DC49E /* SellProfileView.swift */,
 				7C6DD4C028D3E3FD00E8F57A /* SellHomeView.swift */,
+				7CCE65D928D2BAA9003DE636 /* Onboarding */,
 				E93BC5F328D6853B009337C0 /* SellOrderDetailView.swift */,
 				E927A75B28D6CDC8007DC49E /* SellAddScreenshotView.swift */,
 			);
@@ -155,6 +160,7 @@
 				7CA164A028D67E4D006EC6ED /* EatOrderDetailsView.swift */,
 				7CA164A228D6829F006EC6ED /* EatPaymentView.swift */,
 				7C39F99628D8112600550205 /* EatOrderCompleteView.swift */,
+				7CD3013628EBB524009980DA /* PreviewScreenshotView.swift */,
 			);
 			path = Eat;
 			sourceTree = "<group>";
@@ -216,7 +222,6 @@
 				7C39F9A128D8186D00550205 /* Modifiers */,
 				7C92E9CE28D669CF00172CD5 /* Eat */,
 				7C6DD4BE28D3E3D200E8F57A /* Sell */,
-				7CCE65D928D2BAA9003DE636 /* Onboarding */,
 				7C6DD4BA28D3DCC500E8F57A /* QuickSelectView.swift */,
 			);
 			path = Views;
@@ -271,6 +276,7 @@
 				7C6DD4B428D3D7DE00E8F57A /* FirebaseFirestore */,
 				7C6DD4B628D3D7DE00E8F57A /* FirebaseFirestoreSwift */,
 				7C6DD4B828D3D7DE00E8F57A /* FirebaseStorage */,
+				7CD3013928EBB689009980DA /* Kingfisher */,
 			);
 			productName = MealX;
 			productReference = 7CCE65BC28D2B8C9003DE636 /* MealX.app */;
@@ -303,6 +309,7 @@
 			packageReferences = (
 				7C6DD4B128D3D7DE00E8F57A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7C6063C628D65E3F000EEF59 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				7CD3013828EBB688009980DA /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 7CCE65BD28D2B8C9003DE636 /* Products */;
 			projectDirPath = "";
@@ -344,6 +351,7 @@
 				7C6DD4AE28D3D3A900E8F57A /* SignUpViewTwo.swift in Sources */,
 				7CA164A128D67E4D006EC6ED /* EatOrderDetailsView.swift in Sources */,
 				7C39F99928D8119900550205 /* SellView.swift in Sources */,
+				7CD3013728EBB524009980DA /* PreviewScreenshotView.swift in Sources */,
 				E973DB1D28EA0A740079C68F /* EatOrderCell.swift in Sources */,
 				7CCE65D028D2B8E1003DE636 /* SignUpViewOne.swift in Sources */,
 				E927A76528D8E17A007DC49E /* Order.swift in Sources */,
@@ -579,6 +587,14 @@
 				kind = branch;
 			};
 		};
+		7CD3013828EBB688009980DA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -601,6 +617,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7C6DD4B128D3D7DE00E8F57A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		7CD3013928EBB689009980DA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CD3013828EBB688009980DA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -49,6 +49,7 @@ struct SellProfileView: View {
                                     OrderCell(restaurant: order.restaurant , mealType: order.mealType, orderDetails: order.orderDetails, order: order)
                                     
                             } // FOR EACH
+                            .padding()
                         } // LAZY V STACK
                     } // SCROLL VIEW
                     .onAppear(){

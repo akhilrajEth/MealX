@@ -19,9 +19,10 @@ struct SellAddScreenshotView: View {
     @State private var postImage: Image?
     let order: Order
 
+
     // MARK: - BODY
     var body: some View {
-        
+
         VStack {
 
             // Subtitle
@@ -85,11 +86,14 @@ struct SellAddScreenshotView: View {
                     // Upload screenshot data to Firebase Storage
                     addScreenshot()
 
+                    // Toggle the completed var in the order object
+                    updateComplete()
+
                     // Move order into user's private collection of orders
                     viewModel.moveOrder(order: order, userUID: authViewModel.currentUser?.id ?? "")
 
-                    // Toggle the completed var in the order object
-                    updateComplete()
+                    // Delete order from main collection once updated
+//                    viewModel.deleteOrder(order: order, userUID: authViewModel.currentUser?.id ?? "")
 
                     // Toggle the show complete var
                     showCompleteView.toggle()
@@ -109,13 +113,16 @@ struct SellAddScreenshotView: View {
 
         } //: VSTACK
         .navigationTitle("Add Screenshot")
-        
+        .onAppear{
+            eatViewModel.fetchEatersOrders()
+            print("URLLLL")
+            print(order.screenshotURL)
+        }
     }
 
     func addScreenshot() {
-
         // Add screenshot to firebase
-        viewModel.uploadScreenshot(image: selectedImage!, uid: order.id)
+        viewModel.uploadScreenshot(image: selectedImage!, uid: order.id, order: order)
     } //: ADD SCREENSHOT
 
     func loadImage() {
@@ -124,15 +131,9 @@ struct SellAddScreenshotView: View {
     } //: LOAD IMAGE
 
     func updateComplete(){
-
-        eatViewModel.fetchPrivateOrders(uid: order.orderFrom)
-
-        for eatOrder in eatViewModel.privateEaterOrders {
-            if eatOrder.orderFrom == order.orderFrom {
-                
-                viewModel.updateComplete(order: order, status: true)
-            }
-        }
+        print("SC URL")
+        print(order.screenshotURL)
+        viewModel.updateComplete(order: order, status: true)
     } //: UPDATE COMPLETe
 
 }
