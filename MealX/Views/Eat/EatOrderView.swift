@@ -15,6 +15,7 @@ struct EatOrderView: View {
     @State private var selectedRestaurant = "Burrito Theory"
     @State private var mealType = ""
 
+    @ObservedObject var keyboardResponder = KeyboardResponder()
 
     // MARK: - BODY
     var body: some View {
@@ -34,6 +35,7 @@ struct EatOrderView: View {
                     Spacer()
 
                 } //: HSTACK
+                .offset(y: -keyboardResponder.currentHeight)
 
                 Spacer()
 
@@ -116,9 +118,11 @@ struct EatOrderView: View {
 
 
             } //: VSTACK
+            .offset(y: -keyboardResponder.currentHeight * 0.1)
             .navigationTitle("Order")
 
         } //: NAV VIEW
+        .navigationViewStyle(.stack)
 
     }
 }

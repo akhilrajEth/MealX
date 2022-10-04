@@ -46,6 +46,7 @@
 		E973DB1828EA092C0079C68F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973DB1728EA092C0079C68F /* UserService.swift */; };
 		E973DB1A28EA09D00079C68F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973DB1928EA09D00079C68F /* User.swift */; };
 		E973DB1D28EA0A740079C68F /* EatOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973DB1C28EA0A740079C68F /* EatOrderCell.swift */; };
+		E973DB1F28ECA1CF0079C68F /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973DB1E28ECA1CF0079C68F /* KeyboardResponder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		E973DB1728EA092C0079C68F /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		E973DB1928EA09D00079C68F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E973DB1C28EA0A740079C68F /* EatOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatOrderCell.swift; sourceTree = "<group>"; };
+		E973DB1E28ECA1CF0079C68F /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				7C39F99F28D815CF00550205 /* ImagePicker.swift */,
+				E973DB1E28ECA1CF0079C68F /* KeyboardResponder.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				7CCE65C228D2B8C9003DE636 /* ContentView.swift in Sources */,
 				7C39F9A328D8188D00550205 /* EatViewModel.swift in Sources */,
 				7CCE65DB28D2BABF003DE636 /* AuthViewModel.swift in Sources */,
+				E973DB1F28ECA1CF0079C68F /* KeyboardResponder.swift in Sources */,
 				7C92E9D228D66A3900172CD5 /* EatProfileView.swift in Sources */,
 				E93BC5F428D6853B009337C0 /* SellOrderDetailView.swift in Sources */,
 				7CCE65D628D2BA16003DE636 /* CustomInputField.swift in Sources */,

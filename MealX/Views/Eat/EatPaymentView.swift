@@ -90,10 +90,12 @@ struct EatPaymentView: View {
 
             HStack{
 
-                Text(mealDetails)
+                let text = mealDetails
+                let test = String(text.filter{!"\n\t".contains($0)})
+                let final = test.replacingOccurrences(of: " ", with: ",", options: .literal, range: nil)
+                Text(final)
                     .multilineTextAlignment(.leading)
                     .padding()
-
                 Spacer()
             }
             .offset(y:-90)
@@ -123,7 +125,7 @@ struct EatPaymentView: View {
                 .frame(width:300,height:100)
 
 
-            Spacer(minLength: 100)
+            Spacer(minLength: 80)
 
 
         } //: VSTACK
@@ -132,7 +134,12 @@ struct EatPaymentView: View {
 
     }
 }
-
+extension String{
+    func withReplacedCharacters(_ oldChar: String, by newChar: String) -> String{
+        let newStr = self.replacingOccurrences(of: oldChar, with: newChar, options: .literal, range: nil)
+        return newStr
+    }
+}
 
 // MARK: - PREVIEW
 struct EatPaymentView_Previews: PreviewProvider {
