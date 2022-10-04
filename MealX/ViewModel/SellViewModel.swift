@@ -120,6 +120,19 @@ class SellViewModel : ObservableObject{
                 return
             }
         }
+        db.collection("orders").document(order.id).updateData(["completed": status]){
+            error in
+
+            if error == nil{
+                print("Success")
+            }
+
+            else{
+                print("Here's the error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+        }
+
 
 
     } //: FUNC UPDATE STATUS

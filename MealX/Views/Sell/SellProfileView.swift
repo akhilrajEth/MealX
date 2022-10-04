@@ -13,6 +13,10 @@ struct SellProfileView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     @ObservedObject var sellViewModel = SellViewModel()
     @State private var showingAlert = false
+    
+    @State private var mode = 0
+    
+    
 
     // MARK: - BODY
     var body: some View {
@@ -31,6 +35,7 @@ struct SellProfileView: View {
                             .foregroundColor(.gray)
                     } //: VSTACK
                     .padding()
+                    
 
                     Spacer()
                 }

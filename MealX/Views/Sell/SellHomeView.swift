@@ -28,7 +28,9 @@ struct SellHomeView: View {
                         VStack(spacing:10){
                             ForEach(viewModel.orders){
                                 order in
+                                if(order.completed != true){
                                     OrderCell(restaurant: order.restaurant, mealType: order.mealType,orderDetails: order.orderDetails,order:order)
+                                }
                             }
                             .padding()
                         }
