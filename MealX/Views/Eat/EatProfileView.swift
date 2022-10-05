@@ -14,6 +14,8 @@ struct EatProfileView: View {
     @ObservedObject var eatViewModel = EatViewModel()
     @State private var showingAlert = false
     @State private var sellView = false
+    
+    @EnvironmentObject var appState: AppState
 
     // MARK: - BODY
     var body: some View {
@@ -50,7 +52,10 @@ extension EatProfileView {
 
                         Button(action: {
                             // Switch to Sell
-                            sellView.toggle()
+                            //sellView.toggle()
+                            print(appState.rootViewId)
+                            appState.rootViewId = UUID()
+                            print(appState.rootViewId)
                         }, label: {
                             Text("Switch to Sell")
                                 .foregroundColor(.blue)

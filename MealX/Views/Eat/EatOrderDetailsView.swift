@@ -25,6 +25,9 @@ struct EatOrderDetailsView: View {
     let restaurant: String
     let foodType: String
     @State private var didClick:Bool = false
+    
+    @EnvironmentObject var appState: AppState
+
 
     // MARK: - BODY
     var body: some View {

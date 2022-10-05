@@ -16,12 +16,17 @@ struct MealXApp: App {
     }
 
     @StateObject var viewModel = AuthViewModel()
+    @ObservedObject var appState = AppState()
 
 
     var body: some Scene {
         WindowGroup {
             WelcomeView()
                 .environmentObject(viewModel)
+                .environmentObject(appState)
+
+                
         }
+        
     }
 }

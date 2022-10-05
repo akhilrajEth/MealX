@@ -12,6 +12,8 @@ struct QuickSelectView: View {
     // MARK: - PROPERTIES
     @State private var eatView = false
     @State private var sellView = false
+    
+    @EnvironmentObject var appState: AppState
 
     // MARK: - BODY
     var body: some View {

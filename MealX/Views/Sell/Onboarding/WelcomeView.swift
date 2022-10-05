@@ -12,6 +12,8 @@ struct WelcomeView: View {
     // MARK: - PROPERTEIS
     @EnvironmentObject var viewModel: AuthViewModel
 
+    @EnvironmentObject var appState: AppState
+
     // MARK: - BODY
     var body: some View {
 
@@ -22,6 +24,7 @@ struct WelcomeView: View {
                 mainWelcomeView
             } else {
                 QuickSelectView()
+                    .id(appState.rootViewId)
             }
         } //: GROUP
 

@@ -12,6 +12,7 @@ struct EatView: View {
     // MARK: - PROPERTIES
     @State private var selection = 2
 
+    @EnvironmentObject var appState: AppState
 
 
     // MARK: - BODY

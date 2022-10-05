@@ -17,6 +17,9 @@ struct EatOrderView: View {
     @State var isActive : Bool = false
     @ObservedObject var keyboardResponder = KeyboardResponder()
 
+    @EnvironmentObject var appState: AppState
+
+    
     // MARK: - BODY
     var body: some View {
 

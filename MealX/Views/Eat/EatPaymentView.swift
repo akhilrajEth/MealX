@@ -18,6 +18,8 @@ struct EatPaymentView: View {
     @Binding var rootIsStillActive : Bool
     @ObservedObject var viewModel = EatViewModel()
 
+    @EnvironmentObject var appState: AppState
+
 
     // MARK: - BODY
     var body: some View {

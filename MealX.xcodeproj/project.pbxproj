@@ -39,6 +39,7 @@
 		7CCE65DB28D2BABF003DE636 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */; };
 		7CD3013728EBB524009980DA /* PreviewScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3013628EBB524009980DA /* PreviewScreenshotView.swift */; };
 		7CD3013A28EBB689009980DA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7CD3013928EBB689009980DA /* Kingfisher */; };
+		E90BF36C28EE30D100CCB08C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90BF36B28EE30D100CCB08C /* AppState.swift */; };
 		E927A75C28D6CDC8007DC49E /* SellAddScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A75B28D6CDC8007DC49E /* SellAddScreenshotView.swift */; };
 		E927A75E28D6CF15007DC49E /* SellProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A75D28D6CF15007DC49E /* SellProfileView.swift */; };
 		E927A76228D8DCBE007DC49E /* SellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E927A76128D8DCBE007DC49E /* SellViewModel.swift */; };
@@ -79,6 +80,7 @@
 		7CCE65D528D2BA16003DE636 /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		7CD3013628EBB524009980DA /* PreviewScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenshotView.swift; sourceTree = "<group>"; };
+		E90BF36B28EE30D100CCB08C /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E927A75B28D6CDC8007DC49E /* SellAddScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellAddScreenshotView.swift; sourceTree = "<group>"; };
 		E927A75D28D6CF15007DC49E /* SellProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellProfileView.swift; sourceTree = "<group>"; };
 		E927A76128D8DCBE007DC49E /* SellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewModel.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				7CCE65D828D2BA92003DE636 /* Views */,
 				7CCE65D728D2BA81003DE636 /* ViewModel */,
 				7CCE65BF28D2B8C9003DE636 /* MealXApp.swift */,
+				E90BF36B28EE30D100CCB08C /* AppState.swift */,
 				7CCE65C128D2B8C9003DE636 /* ContentView.swift */,
 				7C6DD4AF28D3D6BA00E8F57A /* GoogleService-Info.plist */,
 				7CCE65C328D2B8CB003DE636 /* Assets.xcassets */,
@@ -367,6 +370,7 @@
 				7C39F9A328D8188D00550205 /* EatViewModel.swift in Sources */,
 				7CCE65DB28D2BABF003DE636 /* AuthViewModel.swift in Sources */,
 				E973DB1F28ECA1CF0079C68F /* KeyboardResponder.swift in Sources */,
+				E90BF36C28EE30D100CCB08C /* AppState.swift in Sources */,
 				7C92E9D228D66A3900172CD5 /* EatProfileView.swift in Sources */,
 				E93BC5F428D6853B009337C0 /* SellOrderDetailView.swift in Sources */,
 				7CCE65D628D2BA16003DE636 /* CustomInputField.swift in Sources */,

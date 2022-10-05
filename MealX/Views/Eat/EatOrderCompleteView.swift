@@ -14,6 +14,9 @@ struct EatOrderCompleteView: View {
     @Binding var shouldPopToRootView : Bool
     let title: String
     let message: String
+    
+    @EnvironmentObject var appState: AppState
+
 
     // MARK: - BODY
     var body: some View {

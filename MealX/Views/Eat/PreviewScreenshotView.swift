@@ -12,6 +12,9 @@ struct PreviewScreenshotView: View {
 
     // MARK: - PROPERTIES
     let order: Order
+    
+    @EnvironmentObject var appState: AppState
+
 
 
     // MARK: - BODY
