@@ -24,6 +24,7 @@
 		7C92E9D028D669DA00172CD5 /* EatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92E9CF28D669DA00172CD5 /* EatView.swift */; };
 		7C92E9D228D66A3900172CD5 /* EatProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92E9D128D66A3900172CD5 /* EatProfileView.swift */; };
 		7C92E9D428D66B7E00172CD5 /* EatOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92E9D328D66B7E00172CD5 /* EatOrderView.swift */; };
+		7C99C19B28ED1A5B0035F476 /* ProfileOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C99C19A28ED1A5B0035F476 /* ProfileOrderCell.swift */; };
 		7CA164A128D67E4D006EC6ED /* EatOrderDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA164A028D67E4D006EC6ED /* EatOrderDetailsView.swift */; };
 		7CA164A328D6829F006EC6ED /* EatPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA164A228D6829F006EC6ED /* EatPaymentView.swift */; };
 		7CCE65C028D2B8C9003DE636 /* MealXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65BF28D2B8C9003DE636 /* MealXApp.swift */; };
@@ -63,6 +64,7 @@
 		7C92E9CF28D669DA00172CD5 /* EatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatView.swift; sourceTree = "<group>"; };
 		7C92E9D128D66A3900172CD5 /* EatProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatProfileView.swift; sourceTree = "<group>"; };
 		7C92E9D328D66B7E00172CD5 /* EatOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatOrderView.swift; sourceTree = "<group>"; };
+		7C99C19A28ED1A5B0035F476 /* ProfileOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrderCell.swift; sourceTree = "<group>"; };
 		7CA164A028D67E4D006EC6ED /* EatOrderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatOrderDetailsView.swift; sourceTree = "<group>"; };
 		7CA164A228D6829F006EC6ED /* EatPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatPaymentView.swift; sourceTree = "<group>"; };
 		7CCE65BC28D2B8C9003DE636 /* MealX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				7C6DD4C228D3E43B00E8F57A /* OrderCell.swift */,
+				7C99C19A28ED1A5B0035F476 /* ProfileOrderCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				7C39F99928D8119900550205 /* SellView.swift in Sources */,
 				7CD3013728EBB524009980DA /* PreviewScreenshotView.swift in Sources */,
 				E973DB1D28EA0A740079C68F /* EatOrderCell.swift in Sources */,
+				7C99C19B28ED1A5B0035F476 /* ProfileOrderCell.swift in Sources */,
 				7CCE65D028D2B8E1003DE636 /* SignUpViewOne.swift in Sources */,
 				E927A76528D8E17A007DC49E /* Order.swift in Sources */,
 				7C6DD4C128D3E3FD00E8F57A /* SellHomeView.swift in Sources */,

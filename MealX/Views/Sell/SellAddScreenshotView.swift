@@ -17,6 +17,7 @@ struct SellAddScreenshotView: View {
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
     @State private var postImage: Image?
+    @Binding var rootIsStillBeingActive : Bool
     let order: Order
 
 
@@ -93,10 +94,12 @@ struct SellAddScreenshotView: View {
                     viewModel.moveOrder(order: order, userUID: authViewModel.currentUser?.id ?? "")
 
                     // Delete order from main collection once updated
-//                    viewModel.deleteOrder(order: order, userUID: authViewModel.currentUser?.id ?? "")
+                    viewModel.deleteOrder(order: order, userUID: authViewModel.currentUser?.id ?? "")
+
+                    self.rootIsStillBeingActive = false
 
                     // Toggle the show complete var
-                    showCompleteView.toggle()
+//                    showCompleteView.toggle()
 
                 }, label: {
 
@@ -104,9 +107,9 @@ struct SellAddScreenshotView: View {
                         .fontWeight(.bold)
                         .modifier(ButtonModifier())
                 })
-                .sheet(isPresented: $showCompleteView, content: {
-                    EatOrderCompleteView(title: "Complete!", message: "You’re all done! You should see this completed order in your profile page." )
-                })
+//                .sheet(isPresented: $showCompleteView, content: {
+////                    EatOrderCompleteView(title: "Complete!", shouldPopToRootView: <#Binding<Bool>#>, message: "You’re all done! You should see this completed order in your profile page." )
+//                })
             }
 
             Spacer()
@@ -115,8 +118,6 @@ struct SellAddScreenshotView: View {
         .navigationTitle("Add Screenshot")
         .onAppear{
             eatViewModel.fetchEatersOrders()
-            print("URLLLL")
-            print(order.screenshotURL)
         }
     }
 

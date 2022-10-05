@@ -14,9 +14,8 @@ struct SellOrderDetailView: View {
     let mealType:String
     let orderDetails:String
     var order:Order
-    
-    
     @ObservedObject private var viewModel = SellViewModel()
+    @Binding var rootIsStillActive : Bool
 
 
     // MARK: - BODY
@@ -79,7 +78,7 @@ struct SellOrderDetailView: View {
                 // Need to add paypal link as a button
 
                 // Segues user to order confirmation view
-                SellAddScreenshotView(order: order)
+                SellAddScreenshotView(rootIsStillBeingActive: $rootIsStillActive, order: order)
 
             }, label: {
                 Text("Continue")

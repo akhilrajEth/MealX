@@ -13,8 +13,9 @@ struct EatPaymentView: View {
     let mealDetails: String
     let restaurant: String
     let foodType: String
-    @State var showCompleteView = false
+    @State var showingAlert = false
     @State var orderComplete = false
+    @Binding var rootIsStillActive : Bool
     @ObservedObject var viewModel = EatViewModel()
 
 
@@ -89,7 +90,6 @@ struct EatPaymentView: View {
             .offset(y:-80)
 
             HStack{
-
                 let text = mealDetails
                 let test = String(text.filter{!"\n\t".contains($0)})
                 let final = test.replacingOccurrences(of: " ", with: ",", options: .literal, range: nil)
@@ -107,20 +107,24 @@ struct EatPaymentView: View {
                 // Set order data
                 viewModel.setOrderData(restaurant: restaurant, mealType: foodType, orderDetails: mealDetails, completed: orderComplete)
 
-                // Toggle the show complete var
-                showCompleteView.toggle()
+                // Notify user that order was successful
+                showingAlert.toggle()
+
 
             }, label: {
-
                 Text("I Paid")
                     .fontWeight(.bold)
                     .modifier(ButtonModifier())
-
-            })
-            .sheet(isPresented: $showCompleteView, content: {
-                EatOrderCompleteView(title: "Success!", message: "You’re all done! You can view the order status in your profile page.")
             })
             .padding()
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Order successful!"), message: Text("You can view the status of your order in your profile tab."), dismissButton: .default(Text("Okay"), action: {
+
+                    // Segue back to order view
+                    rootIsStillActive = false
+                }))
+            }
+
             Text("* once payment is confirmed and order is fufilled you will receive a screenshot containing order information *")
                 .frame(width:300,height:100)
 
@@ -129,7 +133,6 @@ struct EatPaymentView: View {
 
 
         } //: VSTACK
-       // .navigationTitle("Order Details")
 
 
     }
@@ -142,8 +145,8 @@ extension String{
 }
 
 // MARK: - PREVIEW
-struct EatPaymentView_Previews: PreviewProvider {
-    static var previews: some View {
-        EatPaymentView(mealDetails: "Lettuce, Cheese, Onions", restaurant: "Bonny", foodType: "Sandwich")
-    }
-}
+//struct EatPaymentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EatPaymentView(mealDetails: "Lettuce, Cheese, Onions", restaurant: "Bonny", foodType: "Sandwich")
+//    }
+//}

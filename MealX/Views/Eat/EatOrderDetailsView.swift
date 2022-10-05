@@ -11,7 +11,7 @@ struct EatOrderDetailsView: View {
 
     // MARK: - PROPERTIES
     @ObservedObject var keyboardResponder = KeyboardResponder()
-
+    @Binding var rootIsActive : Bool
     @State private var detailText = ""
     let description = """
     Type something like this:
@@ -24,8 +24,8 @@ struct EatOrderDetailsView: View {
 
     let restaurant: String
     let foodType: String
-
     @State private var didClick:Bool = false
+
     // MARK: - BODY
     var body: some View {
         VStack{
@@ -77,7 +77,7 @@ struct EatOrderDetailsView: View {
             NavigationLink(destination: {
                 
                 // Segue to payment view
-                EatPaymentView(mealDetails: detailText, restaurant: restaurant, foodType: foodType)
+                EatPaymentView(mealDetails: detailText, restaurant: restaurant, foodType: foodType, rootIsStillActive: $rootIsActive)
                 
             }, label: {
                 Text("Continue")
@@ -107,8 +107,8 @@ struct EatOrderDetailsView: View {
 }
 
 // MARK: - PREVIEW
-struct EatOrderDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        EatOrderDetailsView(restaurant: "Bonny Castle", foodType: "Sandwich")
-    }
-}
+//struct EatOrderDetailsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EatOrderDetailsView(restaurant: "Bonny Castle", foodType: "Sandwich")
+//    }
+//}

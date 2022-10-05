@@ -10,7 +10,8 @@ import SwiftUI
 struct EatOrderCompleteView: View {
 
     // MARK: - PROPERTIES
-    @Environment (\.presentationMode) var presentationMode
+//    @Environment (\.presentationMode) var presentationMode
+    @Binding var shouldPopToRootView : Bool
     let title: String
     let message: String
 
@@ -52,6 +53,7 @@ struct EatOrderCompleteView: View {
             Button(action: {
 
                 // Return user back to home view
+                shouldPopToRootView = false
 
             }, label: {
                 Text("Done")
@@ -68,9 +70,9 @@ struct EatOrderCompleteView: View {
     }
 }
 
-struct EatOrderCompleteView_Previews: PreviewProvider {
-    static var previews: some View {
-        EatOrderCompleteView(title: "Test", message: "I am just testing")
-    }
-}
+//struct EatOrderCompleteView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EatOrderCompleteView(title: "Test", message: "I am just testing")
+//    }
+//}
 

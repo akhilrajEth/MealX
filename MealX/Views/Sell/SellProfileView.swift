@@ -13,9 +13,7 @@ struct SellProfileView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     @ObservedObject var sellViewModel = SellViewModel()
     @State private var showingAlert = false
-    
     @State private var mode = 0
-    
     
 
     // MARK: - BODY
@@ -40,18 +38,20 @@ struct SellProfileView: View {
                     Spacer()
                 }
 
-
                 VStack(alignment:.leading){
-                    Text("Your Orders")
-                        .fontWeight(.semibold)
-                        .font(.title3)
-                        .padding()
+
+                    HStack{
+                        Text("Your Orders")
+                            .fontWeight(.semibold)
+                            .font(.title3)
+                            .padding()
+                    }
 
                     ScrollView {
                         Spacer(minLength: 20)
                         VStack(spacing:10) {
                             ForEach(sellViewModel.sellerOrders) { order in
-                                    OrderCell(restaurant: order.restaurant , mealType: order.mealType, orderDetails: order.orderDetails, order: order)
+                                ProfileOrderCell(restaurant: order.restaurant , mealType: order.mealType, orderDetails: order.orderDetails, order: order)
                                     
                             } // FOR EACH
                             .padding()
@@ -67,33 +67,33 @@ struct SellProfileView: View {
             .navigationTitle("Profile")
             .toolbar{
 
-                ToolbarItem(placement: .navigationBarTrailing){
+                Menu {
 
+                    // Button 1
                     Button(action: {
                         // Sign user out
                         viewModel.signOut()
                     }, label: {
-                        Text("Sign Out")
+                        Label("Sign Out", systemImage: "person.crop.circle.fill.badge.minus")
                             .foregroundColor(.red)
                     })
-                } //: TOOL BAR ITEM
 
-                ToolbarItem(placement: .navigationBarLeading){
-
-                    Button {
-                        // Delete user account
+                    // Button 2
+                    Button(action: {
                         showingAlert.toggle()
-                    } label: {
-                        Text("Delete Account")
+                    }, label: {
+                        Label("Delete Account", systemImage: "trash.circle")
                             .foregroundColor(.red)
-                            .padding(.leading, 0)
-                    }
+                    })
                     .alert(isPresented: $showingAlert) {
                         Alert(title: Text("Are you sure you want to delete your account?"), message: Text("You cannot undo this."), primaryButton: .destructive(Text("Delete"), action: {
                             viewModel.deleteUser()
                         }), secondaryButton: .cancel())
-                    }
-                } // TOOL BAR ITEM
+                    } //: END OF ALERT
+                } label: {
+                    Label("More", systemImage: "ellipsis.circle")
+                }
+
 
             } //: TOOLBAR
 

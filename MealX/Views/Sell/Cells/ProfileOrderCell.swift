@@ -1,22 +1,21 @@
 //
-//  OrderCell.swift
+//  ProfileOrderCell.swift
 //  MealX
 //
-//  Created by Karthik  Ramu on 10/1/22.
+//  Created by Karthik  Ramu on 10/4/22.
 //
 
 import SwiftUI
 
-struct OrderCell: View {
+struct ProfileOrderCell: View {
 
     // MARK: - PROPERTIES
     @ObservedObject private var viewModel = SellViewModel()
-    @Binding var rootIsActive : Bool
     let restaurant:String
     let mealType:String
     let orderDetails:String
     var order:Order
-    
+
 
     // MARK: - BODY
     var body: some View {
@@ -28,17 +27,16 @@ struct OrderCell: View {
                     .font(.title2)
                     .fontWeight(.semibold)
                     .foregroundColor(.black)
-                
+
                 // Order type
                 Text("\(mealType)")
                     .foregroundColor(.gray)
             } //: VSTACK
             .padding()
-            
+
             Spacer()
 
-
-            NavigationLink(destination: {SellOrderDetailView(restaurant: restaurant, mealType: mealType, orderDetails: orderDetails, order: order, rootIsStillActive: $rootIsActive)}, label: {
+            NavigationLink(destination: {EmptyView()}, label: {
                 if(order.pending == false){
                     Text("Fulfill")
                         .foregroundColor(Color.white)
@@ -78,10 +76,9 @@ struct OrderCell: View {
     }
 }
 
-
 // MARK: - PREVIEW
-//struct OrderCell_Previews: PreviewProvider {
+//struct ProfileOrderCell_Previews: PreviewProvider {
 //    static var previews: some View {
-//        OrderCell(restaurant: "Bonny Castle", mealType: "Sandwich", orderDetails: "Lettuce, Onions, Olives")
+//        ProfileOrderCell()
 //    }
 //}

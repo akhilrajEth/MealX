@@ -11,6 +11,9 @@ struct SellHomeView: View {
 
     // MARK: - PROPERTIES
     @ObservedObject private var viewModel = SellViewModel()
+    @State var isActive : Bool = false
+
+
     // MARK: - BODY
     var body: some View {
 
@@ -29,15 +32,18 @@ struct SellHomeView: View {
                             ForEach(viewModel.orders){
                                 order in
                                 if(order.completed != true){
-                                    OrderCell(restaurant: order.restaurant, mealType: order.mealType,orderDetails: order.orderDetails,order:order)
+                                    OrderCell(rootIsActive: $isActive, restaurant: order.restaurant, mealType: order.mealType,orderDetails: order.orderDetails,order:order)
                                 }
+
                             }
+                            .onTapGesture(perform: {
+                                self.isActive = true
+                            })
                             .padding()
                         }
                     }
                     .onAppear(){
                         self.viewModel.getOrderData()
-
                     }
                 } //: VSTACK
             .navigationTitle("Orders")

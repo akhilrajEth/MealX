@@ -14,7 +14,7 @@ struct EatOrderView: View {
     var restaurants = ["Burrito Theory", "Bonny Castle"]
     @State private var selectedRestaurant = "Burrito Theory"
     @State private var mealType = ""
-
+    @State var isActive : Bool = false
     @ObservedObject var keyboardResponder = KeyboardResponder()
 
     // MARK: - BODY
@@ -83,25 +83,47 @@ struct EatOrderView: View {
 
                         } //: HSTACK
 
-                        NavigationLink(destination: {
+                        Button(action: {
 
-                            // Segue to add order view
-                            EatOrderDetailsView(restaurant: selectedRestaurant, foodType: mealType)
+                            self.isActive = true
 
                         }, label: {
 
-                            // Bring user to eat view
                             Text("Enter instructions")
-                                .fontWeight(.semibold)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .fill(.green)
-                                        .frame(width:170, height: 40)
-                                )
-                                .font(.callout)
-                                .foregroundColor(.white)
+                                    .fontWeight(.semibold)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .fill(.green)
+                                            .frame(width:170, height: 40)
+                                    )
+                                    .font(.callout)
+                                    .foregroundColor(.white)
                         })
                         .padding()
+                        .background(
+                            NavigationLink(destination: EatOrderDetailsView(rootIsActive: $isActive, restaurant: selectedRestaurant, foodType: mealType),
+                                           isActive: self.$isActive) {EmptyView()}
+                        )
+
+//                        NavigationLink(destination: {
+//
+//                            // Segue to add order view
+//                            EatOrderDetailsView(restaurant: selectedRestaurant, foodType: mealType)
+//
+//                        }, label: {
+//
+//                            // Bring user to eat view
+//                            Text("Enter instructions")
+//                                .fontWeight(.semibold)
+//                                .background(
+//                                    RoundedRectangle(cornerRadius: 8)
+//                                        .fill(.green)
+//                                        .frame(width:170, height: 40)
+//                                )
+//                                .font(.callout)
+//                                .foregroundColor(.white)
+//                        })
+//                        .padding()
 
                     } //: VSTACK
                     .padding()
