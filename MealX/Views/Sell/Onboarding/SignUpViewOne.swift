@@ -35,9 +35,9 @@ struct SignUpViewOne: View {
 
 
             // Text fields for user inputs
-            CustomInputField(fieldTitle: "What's your name?", isSecureField: false, text: $name)
+            CustomInputField(fieldTitle: "What's your name?", placeholder: "", isSecureField: false, text: $name)
 
-            CustomInputField(fieldTitle: "What's your university email?", isSecureField: false, text: $email)
+            CustomInputField(fieldTitle: "What's your university email?", placeholder: "", isSecureField: false, text: $email)
 
             Spacer()
 

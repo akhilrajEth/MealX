@@ -11,6 +11,7 @@ struct CustomInputField: View {
 
     // MARK: - PROPERTIES
     let fieldTitle: String
+    let placeholder: String
     let isSecureField: Bool?
     @Binding var text: String
 
@@ -24,7 +25,7 @@ struct CustomInputField: View {
                 .fontWeight(.semibold)
 
             if isSecureField ?? false {
-                SecureField("", text: $text)
+                SecureField(placeholder, text: $text)
                     .background(
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .stroke(Color.gray, lineWidth: 1)
@@ -33,7 +34,7 @@ struct CustomInputField: View {
                     .frame(height: 45)
 
             } else {
-                TextField("", text: $text)
+                TextField(placeholder, text: $text)
                     .background(
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .stroke(Color.gray, lineWidth: 1)
@@ -50,8 +51,8 @@ struct CustomInputField: View {
 
 
 // MARK: - PREVIEW
-struct CustomInputField_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomInputField(fieldTitle: "test", isSecureField: false, text: .constant(""))
-    }
-}
+//struct CustomInputField_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CustomInputField(fieldTitle: "test", isSecureField: false, text: .constant(""))
+//    }
+//}

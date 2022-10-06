@@ -66,7 +66,7 @@ struct EatOrderView: View {
                     } //: VSTACK
 
                     // Text fields for user inputs
-                    CustomInputField(fieldTitle: "2. What kind of meal do you want?", isSecureField: false, text: $mealType)
+                    CustomInputField(fieldTitle: "2. What kind of meal do you want?", placeholder: " e.g. Bowl, Burrito, Castle Bowl, Wrap", isSecureField: false, text: $mealType)
 
 
                     VStack(alignment: .leading) {

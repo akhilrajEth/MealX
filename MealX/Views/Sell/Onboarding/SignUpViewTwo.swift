@@ -40,9 +40,9 @@ struct SignUpViewTwo: View {
             .padding()
 
             // Text fields for user inputs
-            CustomInputField(fieldTitle: "Password", isSecureField: true, text: $password)
+            CustomInputField(fieldTitle: "Password", placeholder: "", isSecureField: true, text: $password)
 
-            CustomInputField(fieldTitle: "PayPal Link", isSecureField: false, text: $payPalLink)
+            CustomInputField(fieldTitle: "PayPal Link", placeholder: "", isSecureField: false, text: $payPalLink)
 
             Spacer()
 

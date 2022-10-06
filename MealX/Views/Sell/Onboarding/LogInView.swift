@@ -19,9 +19,9 @@ struct LogInView: View {
 
         VStack{
             // Text fields for user inputs
-            CustomInputField(fieldTitle: "Email", isSecureField: false, text: $email)
+            CustomInputField(fieldTitle: "Email", placeholder: "", isSecureField: false, text: $email)
 
-            CustomInputField(fieldTitle: "Password", isSecureField: true, text: $password)
+            CustomInputField(fieldTitle: "Password", placeholder: "", isSecureField: true, text: $password)
 
             Spacer()
 

@@ -15,6 +15,7 @@ struct SellProfileView: View {
     @State private var showingAlert = false
     @State private var mode = 0
     
+    @EnvironmentObject var appState: AppState
 
     // MARK: - BODY
     var body: some View {
@@ -31,6 +32,16 @@ struct SellProfileView: View {
 
                         Text(viewModel.currentUser?.email ?? "")
                             .foregroundColor(.gray)
+
+                        Button(action: {
+                            // Switch to Eat
+                            print(appState.rootViewId)
+                            appState.rootViewId = UUID()
+                            print(appState.rootViewId)
+                        }, label: {
+                            Text("Switch to Eat")
+                                .foregroundColor(.blue)
+                        })
                     } //: VSTACK
                     .padding()
                     
