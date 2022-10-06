@@ -19,77 +19,45 @@ struct EatPaymentView: View {
     @ObservedObject var viewModel = EatViewModel()
 
     @EnvironmentObject var appState: AppState
+    
+    @State var didPay:Bool = false
 
 
     // MARK: - BODY
     var body: some View {
-
+     
         VStack(spacing: 0){
-            Spacer()
-            HStack{
-                Text("Pay the seller with PayPal or Venmo!")
-                    .multilineTextAlignment(.leading)
-                    .padding()
-                    .padding(.top, 0)
-                    .padding(.bottom, 0)
-            } //: HSTACK
-            HStack{
-                Spacer()
-                Image("paypalLogo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width:100,height:100)
-                
-                Spacer(minLength:80)
-                Link("paypal.me/MealXUVA", destination: .init(string: "https://paypal.me/MealXUVA")!)
-                    .font(.title3)
-                    .foregroundColor(.orange)
-                Spacer()
-            }
-            HStack{
-                Spacer()
-                Image("venmoLogo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100,height: 100)
-                Spacer(minLength: 200)
-                Text("@MealX")
-                Spacer()
-            }
-            .offset(y:-50)
-            
-
             // Price
-            HStack{
-                Text("$5.29")
-                    .font(.title)
-                    .bold()
-                    .padding()
-
-                Spacer()
-            } //: HSTACK
-            .offset(y:-60)
-
-
-
-            // Restaurant and meal type
-            HStack {
-                VStack(alignment: .leading){
-
-                    Text("Bonny Castle")
-                        .font(.title2)
-
-                    Text("Sandwich")
-                        .font(.title3)
-                        .foregroundColor(.gray)
-
-                } //: VSTACK
-                .padding()
+            VStack{
+                HStack{
+                    Text("$5.29")
+                        .font(.title)
+                        .bold()
+                        .padding()
+                    
+                    Spacer()
+                } //: HSTACK
                 
-
-                Spacer()
-            } //: HSTACK
-            .offset(y:-80)
+                // Restaurant and meal type
+                HStack {
+                    VStack(alignment: .leading){
+                        
+                        Text("Bonny Castle")
+                            .font(.title2)
+                        
+                        Text("Sandwich")
+                            .font(.title3)
+                            .foregroundColor(.gray)
+                        
+                    } //: VSTACK
+                    .padding()
+                    
+                    
+                    Spacer()
+                } //: HSTACK
+                .offset(y:-30)
+            }
+            Spacer()
 
             HStack{
                 let text = mealDetails
@@ -100,41 +68,92 @@ struct EatPaymentView: View {
                     .padding()
                 Spacer()
             }
-            .offset(y:-90)
-
-            Button(action: {
-
-                // Add PayPal link to button
-
-                // Set order data
-                viewModel.setOrderData(restaurant: restaurant, mealType: foodType, orderDetails: mealDetails, completed: orderComplete)
-
-                // Notify user that order was successful
-                showingAlert.toggle()
-
-
-            }, label: {
-                Text("I Paid")
-                    .fontWeight(.bold)
-                    .modifier(ButtonModifier())
-            })
-            .padding()
-            .alert(isPresented: $showingAlert) {
-                Alert(title: Text("Order successful!"), message: Text("You can view the status of your order in your profile tab."), dismissButton: .default(Text("Okay"), action: {
-
-                    // Segue back to order view
-                    rootIsStillActive = false
-                }))
+            .offset(y:-110)
+            
+            HStack{
+                Spacer()
+                
+                Link("Pay With Paypal", destination: .init(string: "https://paypal.me/MealXUVA")!)
+                    .font(.title3)
+                    .foregroundColor(.white)
+                    .simultaneousGesture(
+                                TapGesture()
+                                    .onEnded { _ in
+                                        didPay = true
+                                        print(didPay)
+                                    }
+                            )
+                    .background(RoundedRectangle(cornerRadius: 14)
+                        .fill(Color.blue)
+                        .frame(width: 320,height:50))
+                    .frame(width:320)
+                
+                Spacer()
+            }
+            .offset(y:-30)
+            
+            HStack{
+                Spacer()
+                
+                Link("Pay With Venmo: @MealX", destination: .init(string: "https://get.venmo.com")!)
+                    .font(.title3)
+                    .foregroundColor(.white)
+                    .simultaneousGesture(
+                                TapGesture()
+                                    .onEnded { _ in
+                                        didPay = true
+                                        print(didPay)
+                                    }
+                            )
+                    .background(RoundedRectangle(cornerRadius: 14)
+                        .fill(Color.blue)
+                        .frame(width: 320,height:50))
+                    .frame(width:320)
+                
+                Spacer()
+            }
+            Spacer()
+            
+            if(didPay == true){
+                VStack{
+                    Button(action: {
+                        
+                        // Add PayPal link to button
+                        
+                        // Set order data
+                        viewModel.setOrderData(restaurant: restaurant, mealType: foodType, orderDetails: mealDetails, completed: orderComplete)
+                        
+                        // Notify user that order was successful
+                        showingAlert.toggle()
+                        
+                        
+                        
+                        
+                    }, label: {
+                        Text("I Paid")
+                            .fontWeight(.bold)
+                            .modifier(ButtonModifier())
+                    })
+                    .padding()
+                    .alert(isPresented: $showingAlert) {
+                        Alert(title: Text("Order successful!"), message: Text("You can view the status of your order in your profile tab."), dismissButton: .default(Text("Okay"), action: {
+                            
+                            // Segue back to order view
+                            rootIsStillActive = false
+                        }))
+                    }
+                    
+                    Text("* once payment is confirmed and order is fufilled you will receive a screenshot containing order information *")
+                        .frame(width:300,height:100)
+                }
+              
             }
 
-            Text("* once payment is confirmed and order is fufilled you will receive a screenshot containing order information *")
-                .frame(width:300,height:100)
-
-
-            Spacer(minLength: 80)
+            Spacer()
 
 
         } //: VSTACK
+        .navigationTitle("Payment")
 
 
     }
