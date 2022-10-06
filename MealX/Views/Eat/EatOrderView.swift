@@ -11,7 +11,7 @@ struct EatOrderView: View {
 
 
     // MARK: - PROPERTIES
-    var restaurants = ["Burrito Theory", "Bonny Castle"]
+    var restaurants = ["Burrito Theory", "The Castle"]
     @State private var selectedRestaurant = "Burrito Theory"
     @State private var mealType = ""
     @State var isActive : Bool = false

@@ -66,14 +66,17 @@ extension WelcomeView {
                 Spacer()
 
                 VStack(spacing: 60) {
-
+                    
                     NavigationLink {
                         SignUpViewOne()
-                    } label: {
+                    }
+                    label: {
                         Text("Sign Up")
                             .fontWeight(.bold)
                             .modifier(ButtonModifier())
+                            //.frame(width: 320)
                     }
+
 
                     NavigationLink {
                         LogInView()
@@ -81,7 +84,10 @@ extension WelcomeView {
                         Text("Log In")
                             .fontWeight(.bold)
                             .modifier(ButtonModifier())
+                            //.frame(width:320)
                     }
+    
+                    
                 } //: VSTACK
 
                 Spacer(minLength: 225)

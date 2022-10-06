@@ -18,5 +18,6 @@ struct ButtonModifier: ViewModifier {
                     .fill(.green)
                     .frame(width:320, height: 50)
             )
+            .frame(width: 320)
     } // FUNC BODY
 }
