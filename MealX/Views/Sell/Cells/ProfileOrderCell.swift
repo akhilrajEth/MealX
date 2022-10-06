@@ -37,27 +37,17 @@ struct ProfileOrderCell: View {
             Spacer()
 
             NavigationLink(destination: {EmptyView()}, label: {
-                if(order.pending == false){
-                    Text("Fulfill")
+                    Text("Completed")
                         .foregroundColor(Color.white)
                         .frame(width: 100, height:30)
                         .background(
                             RoundedRectangle(cornerRadius:7)
-                                .fill(.green)
+                                .fill(.blue)
                                 .frame(width:100, height: 30)
                         )
 
-                }
-                else if (order.pending == true){
-                    Text("In Progress")
-                        .foregroundColor(Color.white)
-                        .frame(width: 100,height:30)
-                        .background(
-                            RoundedRectangle(cornerRadius:7)
-                                .fill(.orange)
-                                .frame(width:100, height: 30)
-                        )
-                }
+
+
             })
             .disabled(order.pending != false)
 

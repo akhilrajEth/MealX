@@ -45,6 +45,9 @@ class AuthViewModel: ObservableObject {
                     print("User data successfully uploaded.")
                     self.didAuthenticateUser = true
                 }
+
+            self.userSession = user
+
         }
 
     } //: FUNC REGISTER

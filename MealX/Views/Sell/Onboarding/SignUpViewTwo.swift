@@ -23,7 +23,7 @@ struct SignUpViewTwo: View {
 
         VStack{
 
-            //NavigationLink(destination: SelectProfileImageView(), isActive: $viewModel.didAuthenticateUser, label: {})
+//            NavigationLink(destination: SelectProfileImageView(), isActive: $viewModel.didAuthenticateUser, label: {})
 
             // Progress View
             VStack{
