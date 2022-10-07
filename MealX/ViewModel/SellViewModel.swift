@@ -86,7 +86,7 @@ class SellViewModel : ObservableObject{
             }
             
             else{
-                print("Here's the error: \(error?.localizedDescription)")
+                print("Here's the error: \(String(describing: error?.localizedDescription))")
                 return
             }
         }
