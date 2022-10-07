@@ -24,9 +24,12 @@ struct EatOrderDetailsView: View {
 
     let restaurant: String
     let foodType: String
+   
     @State private var didClick:Bool = false
     
     @EnvironmentObject var appState: AppState
+    
+    
 
 
     // MARK: - BODY
@@ -49,12 +52,14 @@ struct EatOrderDetailsView: View {
             HStack {
                 VStack(alignment: .leading){
                     
-                    Text("Bonny Castle")
+                    Text("\(restaurant)")
                         .font(.title2)
                     
-                    Text("Sandwich")
+                    Text("\(foodType)")
                         .font(.title3)
                         .foregroundColor(.gray)
+                    
+
                     
                 } //: VSTACK
                 .padding()
@@ -91,12 +96,17 @@ struct EatOrderDetailsView: View {
             
             
         } //: VSTACK
+        .onTapGesture {
+            self.hideKeyboard()
+        }
         .onDisappear(){
             didClick = false
         }
         .navigationTitle("Order Details")
         .onAppear{
             self.detailText = description
+            
+
         }
         if(didClick){
             Spacer(minLength: 30)
@@ -106,6 +116,12 @@ struct EatOrderDetailsView: View {
         }
         //.offset(y: -keyboardResponder.currentHeight * 0.5)
 
+    }
+}
+
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

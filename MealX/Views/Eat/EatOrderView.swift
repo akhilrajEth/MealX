@@ -148,14 +148,23 @@ struct EatOrderView: View {
 
         } //: NAV VIEW
         .navigationViewStyle(.stack)
+        .onTapGesture {
+            self.hideKeyboard()
+        }
 
     }
+    
 }
 
 
+
+
+
+/*
 // MARK: - PREVIEW
 struct EatOrderView_Previews: PreviewProvider {
     static var previews: some View {
         EatOrderView()
     }
 }
+*/

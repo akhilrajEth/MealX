@@ -42,7 +42,7 @@ struct SignUpViewTwo: View {
             // Text fields for user inputs
             CustomInputField(fieldTitle: "Password", placeholder: "", isSecureField: true, text: $password)
 
-            CustomInputField(fieldTitle: "PayPal Link", placeholder: "", isSecureField: false, text: $payPalLink)
+            CustomInputField(fieldTitle: "PayPal Link or Venmo Handle", placeholder: "e.g. paypal.me/MealXUVA or @MealX", isSecureField: false, text: $payPalLink)
 
             Spacer()
 
@@ -63,6 +63,9 @@ struct SignUpViewTwo: View {
         } //: VSTACK
         .navigationTitle("Sign Up")
         .navigationBarTitleDisplayMode(.inline)
+        .onTapGesture {
+            self.hideKeyboard()
+        }
     }
 }
 

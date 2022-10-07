@@ -42,10 +42,10 @@ struct EatPaymentView: View {
                 HStack {
                     VStack(alignment: .leading){
                         
-                        Text("Bonny Castle")
+                        Text("\(restaurant)")
                             .font(.title2)
                         
-                        Text("Sandwich")
+                        Text("\(foodType)")
                             .font(.title3)
                             .foregroundColor(.gray)
                         
@@ -61,8 +61,8 @@ struct EatPaymentView: View {
 
             HStack{
                 let text = mealDetails
-                let test = String(text.filter{!"\n\t".contains($0)})
-                let final = test.replacingOccurrences(of: " ", with: ",", options: .literal, range: nil)
+                let test = String(text.filter{!"\t-".contains($0)})
+                let final = test.replacingOccurrences(of: "\n", with: ",", options: .literal, range: nil)
                 Text(final)
                     .multilineTextAlignment(.leading)
                     .padding()

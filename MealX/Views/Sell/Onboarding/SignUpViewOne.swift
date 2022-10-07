@@ -57,8 +57,12 @@ struct SignUpViewOne: View {
         } //: VSTACK
         .navigationTitle("Sign Up")
         .navigationBarTitleDisplayMode(.inline)
+        .onTapGesture {
+            self.hideKeyboard()
+        }
     }
 }
+
 
 
 // MARK: - PREVIEW
