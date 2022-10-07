@@ -26,25 +26,43 @@ struct SellHomeView: View {
                         Spacer()
                     } //: HSTACK
 
-                    ScrollView{
-                        Spacer(minLength: 20)
-                        VStack(spacing:10){
-                            ForEach(viewModel.orders){
-                                order in
-                                if(order.completed != true){
-                                    OrderCell(rootIsActive: $isActive, restaurant: order.restaurant, mealType: order.mealType,orderDetails: order.orderDetails,order:order)
-                                }
+                    if viewModel.orders.count != 0 {
 
+                        ScrollView{
+                            Spacer(minLength: 20)
+                            VStack(spacing:10){
+                                ForEach(viewModel.orders){
+                                    order in
+                                    if(order.completed != true){
+                                        OrderCell(rootIsActive: $isActive, restaurant: order.restaurant, mealType: order.mealType,orderDetails: order.orderDetails,order:order)
+                                    }
+
+                                }
+                                .onTapGesture(perform: {
+                                    self.isActive = true
+                                })
+                                .padding()
                             }
-                            .onTapGesture(perform: {
-                                self.isActive = true
-                            })
-                            .padding()
                         }
+                        .onAppear(){
+                            self.viewModel.getOrderData()
+                        }
+                    } else {
+
+                        Spacer(minLength: 20)
+                        HStack{
+                            Spacer()
+                            Text("No orders have been placed yet. Tell your friends to order on the app!")
+                                .foregroundColor(.gray)
+                                .multilineTextAlignment(.center)
+                                .padding()
+                            Spacer()
+                        } //: HSTACK 
+
+                        Spacer()
                     }
-                    .onAppear(){
-                        self.viewModel.getOrderData()
-                    }
+
+
                 } //: VSTACK
             .navigationTitle("Orders")
 

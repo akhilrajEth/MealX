@@ -58,6 +58,9 @@ struct SellProfileView: View {
                             .padding()
                     }
 
+                    Text("Here's all your fulfilled orders.")
+                        .padding(.leading, 15)
+
                     ScrollView {
                         Spacer(minLength: 20)
                         VStack(spacing:10) {
