@@ -80,6 +80,7 @@ extension EatProfileView {
 
                     Text("Click on a Completed order to view your screenshot.")
                         .padding(.leading, 15)
+                        .padding(.trailing, 15)
 
                     ScrollView {
                         LazyVStack {

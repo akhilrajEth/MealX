@@ -20,8 +20,8 @@ class AuthViewModel: ObservableObject {
 
     init(){
         // Sets user session to current user
-        self.fetchUser()
         self.userSession = Auth.auth().currentUser
+        self.fetchUser()
     }
 
     // Register user
@@ -44,6 +44,7 @@ class AuthViewModel: ObservableObject {
                 .setData(["name": name, "email": email, "pay_pal_link": payPalLink]){ _ in
                     print("User data successfully uploaded.")
                     self.didAuthenticateUser = true
+                    self.fetchUser()
                 }
 
             self.userSession = user
@@ -58,6 +59,7 @@ class AuthViewModel: ObservableObject {
 
         service.fetchUser(withUid: uid) { user in
             self.currentUser = user
+            self.fetchUser()
         }
 
     } // FETCH USER
@@ -75,6 +77,8 @@ class AuthViewModel: ObservableObject {
             // Save user data to Firebase Firestore
             guard let user = result?.user else { return }
             self.userSession = user
+            self.fetchUser()
+
         }
     } //: FUNC LOGIN
 

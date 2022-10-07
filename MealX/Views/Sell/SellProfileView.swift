@@ -62,7 +62,6 @@ struct SellProfileView: View {
                         .padding(.leading, 15)
 
                     ScrollView {
-                        Spacer(minLength: 20)
                         VStack(spacing:20) {
                             ForEach(sellViewModel.sellerOrders) { order in
                                 ProfileOrderCell(restaurant: order.restaurant , mealType: order.mealType, orderDetails: order.orderDetails, order: order)

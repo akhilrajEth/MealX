@@ -19,50 +19,53 @@ struct ProfileOrderCell: View {
 
     // MARK: - BODY
     var body: some View {
+
         HStack{
-            Spacer()
-            VStack(alignment:.leading){
-                // Order place
-                Text("\(restaurant)")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.black)
-
-                // Order type
-                Text("\(mealType)")
-                    .foregroundColor(.gray)
-            } //: VSTACK
-            .padding()
 
             Spacer()
+            HStack{
 
-            NavigationLink(destination: {EmptyView()}, label: {
-                    Text("Completed")
-                        .foregroundColor(Color.white)
-                        .frame(width: 100, height:30)
-                        .background(
-                            RoundedRectangle(cornerRadius:7)
-                                .fill(.blue)
-                                .frame(width:100, height: 30)
-                        )
+                VStack(alignment:.leading){
+                    // Order place
+                    Text("\(restaurant)")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.black)
 
+                    // Order type
+                    Text("\(mealType)")
+                        .foregroundColor(.gray)
+                } //: VSTACK
+                .padding()
 
+                Spacer()
 
-            })
-            .disabled(order.pending != false)
+                NavigationLink(destination: {EmptyView()}, label: {
+                        Text("Completed")
+                            .foregroundColor(Color.white)
+                            .frame(width: 100, height:30)
+                            .background(
+                                RoundedRectangle(cornerRadius:7)
+                                    .fill(.blue)
+                                    .frame(width:100, height: 30)
+                            )
 
+                })
+                .padding()
 
-            Spacer(minLength: 50)
+            }
+            .onAppear(){
+                self.viewModel.updateStatus(orderID: order.id, status: false)
+            }
+            .overlay(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(Color.gray, lineWidth: 0.5)
+            )
+
+            Spacer() 
 
         }
-        .onAppear(){
-            self.viewModel.updateStatus(orderID: order.id, status: false)
-        }
-        .background(
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
-            .stroke(Color.gray, lineWidth: 0.5)
-            .frame(width: 350,height: 90)
-        )
+
     }
 }
 

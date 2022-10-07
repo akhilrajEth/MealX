@@ -70,10 +70,9 @@ struct OrderCell: View {
         .onAppear(){
             self.viewModel.updateStatus(orderID: order.id, status: false)
         }
-        .background(
+        .overlay(
             RoundedRectangle(cornerRadius: 10, style: .continuous)
-            .stroke(Color.gray, lineWidth: 0.5)
-            .frame(width: 350,height: 90)
+                .stroke(Color.gray, lineWidth: 0.5)
         )
     }
 }

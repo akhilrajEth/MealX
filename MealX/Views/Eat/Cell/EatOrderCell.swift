@@ -14,73 +14,70 @@ struct EatOrderCell: View {
 
     // MARK: - BODY
     var body: some View {
+
         HStack{
 
-            VStack(alignment:.leading){
-                // Order place
-                Text("\(order.restaurant)")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.black)
-
-                // Order type
-                Text("\(order.mealType)")
-                    .foregroundColor(.gray)
-            } //: VSTACK
-            .padding()
-
             Spacer()
 
-            if order.completed != true {
+            HStack{
+
+                VStack(alignment:.leading){
+                    // Order place
+                    Text("\(order.restaurant)")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.black)
+
+                    // Order type
+                    Text("\(order.mealType)")
+                        .foregroundColor(.gray)
+                } //: VSTACK
+                .padding()
+
+                Spacer()
 
                 NavigationLink(destination: {
 
-                    // Segue to more details
-
+                    if order.completed == true {
+                        // Segue to more info
+                        PreviewScreenshotView(order: order)
+                    }
 
                 }, label: {
 
-                    Text("Ordered")
-                        .foregroundColor(Color.white)
-                        .background(
-                            RoundedRectangle(cornerRadius:7)
-                                .fill(.blue)
-                                .frame(width:100, height: 30)
-                        )
-                    
+                    if order.completed == true {
+                        Text("Completed")
+                            .foregroundColor(Color.white)
+                            .background(
+                                RoundedRectangle(cornerRadius:7)
+                                    .fill(.green)
+                                    .frame(width:100, height: 30)
+                            )
+                            .padding()
+                    } else {
+
+                        Text("Ordered")
+                            .foregroundColor(Color.white)
+                            .background(
+                                RoundedRectangle(cornerRadius:7)
+                                    .fill(.blue)
+                                    .frame(width:100, height: 30)
+                            )
+                            .padding()
+                    }
                 }) //: NAV LINK
-                .disabled(true)
+                .disabled(order.pending != false)
 
-            } else if order.completed == true {
 
-                NavigationLink(destination: {
-
-                    // Segue to more info
-                    PreviewScreenshotView(order: order)
-                    
-                }, label: {
-                    Text("Completed")
-                        .foregroundColor(Color.white)
-                        .background(
-                            RoundedRectangle(cornerRadius:7)
-                                .fill(.green)
-                                .frame(width:100, height: 30)
-                        )
-
-                }) //: NAV LINK
-
-            } //: ELSE IF STATEMENT
+            } //: HSTACK
+            .overlay(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(Color.gray, lineWidth: 0.5)
+            )
 
             Spacer()
+        }
 
-
-        } //: HSTACK
-        .background(
-
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
-            .stroke(Color.gray, lineWidth: 0.5)
-            .frame(width: 350,height: 90)
-        )
 
     }
 }
