@@ -63,12 +63,11 @@ struct SellProfileView: View {
 
                     ScrollView {
                         Spacer(minLength: 20)
-                        VStack(spacing:10) {
+                        VStack(spacing:20) {
                             ForEach(sellViewModel.sellerOrders) { order in
                                 ProfileOrderCell(restaurant: order.restaurant , mealType: order.mealType, orderDetails: order.orderDetails, order: order)
                                     
                             } // FOR EACH
-                            .padding()
                         } // LAZY V STACK
                     } // SCROLL VIEW
                     .onAppear(){

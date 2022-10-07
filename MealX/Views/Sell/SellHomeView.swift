@@ -44,9 +44,7 @@ struct SellHomeView: View {
                                 .padding()
                             }
                         }
-                        .onAppear(){
-                            self.viewModel.getOrderData()
-                        }
+
                     } else {
 
                         Spacer(minLength: 20)
@@ -64,8 +62,10 @@ struct SellHomeView: View {
 
 
                 } //: VSTACK
-            .navigationTitle("Orders")
-
+                .navigationTitle("Orders")
+                .onAppear(){
+                    self.viewModel.getOrderData()
+                }
            
             
         } //: NAV VIEW

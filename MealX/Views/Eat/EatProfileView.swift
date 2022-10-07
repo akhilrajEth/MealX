@@ -86,8 +86,6 @@ extension EatProfileView {
                             ForEach(eatViewModel.eaterOrders) { order in
                                     EatOrderCell(order: order)
                             } // FOR EACH
-                            .padding()
-
                         } // LAZY V STACK
                     } // SCROLL VIEW
                     .onAppear(){
