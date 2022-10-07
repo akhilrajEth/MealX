@@ -53,6 +53,7 @@ struct EatOrderCell: View {
                                     .fill(.green)
                                     .frame(width:100, height: 30)
                             )
+                            .padding()
                     } else {
 
                         Text("Ordered")
@@ -62,9 +63,9 @@ struct EatOrderCell: View {
                                     .fill(.blue)
                                     .frame(width:100, height: 30)
                             )
+                            .padding(.trailing, 27)
                     }
                 }) //: NAV LINK
-                .padding()
                 .disabled(order.pending != false)
 
 
