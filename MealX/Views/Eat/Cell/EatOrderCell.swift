@@ -76,7 +76,7 @@ struct EatOrderCell: View {
             )
 
             Spacer()
-        }
+        } //: HSTACK 
 
 
     }
