@@ -33,7 +33,7 @@ struct SellHomeView: View {
                             VStack(spacing:10){
                                 ForEach(viewModel.orders){
                                     order in
-                                    if(order.completed != true){
+                                    if(order.completed != true && order.orderFrom != AuthViewModel().userSession!.uid){
                                         OrderCell(rootIsActive: $isActive, restaurant: order.restaurant, mealType: order.mealType,orderDetails: order.orderDetails,order:order)
                                     }
 
