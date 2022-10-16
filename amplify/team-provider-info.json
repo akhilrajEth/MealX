@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mealx-staging-194115-authRole",
+      "UnauthRoleArn": "arn:aws:iam::320304939783:role/amplify-mealx-staging-194115-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::320304939783:role/amplify-mealx-staging-194115-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-mealx-staging-194115-deployment",
+      "UnauthRoleName": "amplify-mealx-staging-194115-unauthRole",
+      "StackName": "amplify-mealx-staging-194115",
+      "StackId": "arn:aws:cloudformation:us-east-1:320304939783:stack/amplify-mealx-staging-194115/7fd2cb20-4d8a-11ed-a56f-0a7361ba5763",
+      "AmplifyAppId": "djcnvir7xxbvn"
+    }
+  }
+}

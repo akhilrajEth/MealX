@@ -10,6 +10,33 @@
       }
     },
     {
+      "identity" : "amplify-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/aws-amplify/amplify-ios",
+      "state" : {
+        "revision" : "b3a5a4a7abc27f2b392cd785d1dd883116de0f23",
+        "version" : "1.28.1"
+      }
+    },
+    {
+      "identity" : "aws-appsync-realtime-client-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/aws-amplify/aws-appsync-realtime-client-ios.git",
+      "state" : {
+        "revision" : "da88cf1cab82e281e7277cd9feb9efc87a057041",
+        "version" : "2.1.1"
+      }
+    },
+    {
+      "identity" : "aws-sdk-ios-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/aws-amplify/aws-sdk-ios-spm.git",
+      "state" : {
+        "revision" : "d0667b076a3411d097d3194418713ee98356a967",
+        "version" : "2.28.0"
+      }
+    },
+    {
       "identity" : "boringssl-swiftpm",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/boringssl-SwiftPM.git",
@@ -106,6 +133,24 @@
       "state" : {
         "revision" : "3e4e743631e86c8c70dbc6efdc7beaa6e90fd3bb",
         "version" : "2.1.1"
+      }
+    },
+    {
+      "identity" : "sqlite.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stephencelis/SQLite.swift.git",
+      "state" : {
+        "revision" : "5f5ad81ac0d0a0f3e56e39e646e8423c617df523",
+        "version" : "0.13.2"
+      }
+    },
+    {
+      "identity" : "starscream",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/daltoniam/Starscream",
+      "state" : {
+        "revision" : "df8d82047f6654d8e4b655d1b1525c64e1059d21",
+        "version" : "4.0.4"
       }
     },
     {

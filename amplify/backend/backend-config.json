@@ -1,0 +1,25 @@
+{
+  "api": {
+    "MealX": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "This is an api key"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
