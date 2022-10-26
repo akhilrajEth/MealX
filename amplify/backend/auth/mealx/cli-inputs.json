@@ -1,0 +1,12 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "mealx_identitypool_71583396",
+    "allowUnauthenticatedIdentities": true,
+    "authSelections": "identityPoolOnly",
+    "resourceName": "mealx",
+    "sharedId": "71583396",
+    "serviceName": "Cognito",
+    "useDefault": "manual"
+  }
+}

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import AWSDataStorePlugin
+import Amplify
 
 struct EatPaymentView: View {
 
@@ -15,9 +17,13 @@ struct EatPaymentView: View {
     let foodType: String
     @State var showingAlert = false
     @State var orderComplete = false
+    @State var messageText = "Order Placed"
     @Binding var rootIsStillActive : Bool
     @ObservedObject var viewModel = EatViewModel()
+    @ObservedObject var notificationViewModel = notificationViewModel()
+    @EnvironmentObject var authViewModel: AuthViewModel
 
+    
     @EnvironmentObject var appState: AppState
     
     @State var didPay:Bool = false
@@ -117,17 +123,30 @@ struct EatPaymentView: View {
             if(didPay == true){
                 VStack{
                     Button(action: {
-                        
                         // Add PayPal link to button
                         
                         // Set order data
                         viewModel.setOrderData(restaurant: restaurant, mealType: foodType, orderDetails: mealDetails, completed: orderComplete)
                         
                         // Notify user that order was successful
+                        
+                        guard let deviceToken = DeviceTokenManager.shared.deviceToken else {return}
+                      
+                        print(deviceToken)
+                        do {
+                            let item = PushNotification(body: messageText, deviceToken: deviceToken)
+                            
+                            let savedItem = try Amplify.DataStore.save(item)
+                        }
+                        catch let error as DataStoreError{
+                            print("\(error)")
+                        }
+                        catch{
+                            print("Damn")
+                        }
+                        
+                        
                         showingAlert.toggle()
-                        
-                        
-                        
                         
                     }, label: {
                         Text("I Paid")
@@ -162,6 +181,33 @@ extension String{
     func withReplacedCharacters(_ oldChar: String, by newChar: String) -> String{
         let newStr = self.replacingOccurrences(of: oldChar, with: newChar, options: .literal, range: nil)
         return newStr
+    }
+}
+
+extension EatPaymentView {
+    class notificationViewModel: ObservableObject{
+        
+        func sendMessage(message:String) {
+            var messageText = message
+            guard let deviceToken = DeviceTokenManager.shared.deviceToken else {return}
+          
+            print(deviceToken)
+            do {
+                let item = PushNotification(body: messageText, deviceToken: deviceToken)
+                
+                let savedItem = try Amplify.DataStore.save(item)
+            }
+            catch let error as DataStoreError{
+                print("\(error)")
+            }
+            catch{
+                print("Damn")
+            }
+            
+            
+            print(messageText)
+            messageText.removeAll()
+        }
     }
 }
 

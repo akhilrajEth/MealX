@@ -29,23 +29,23 @@ extension ContentView {
         
         func sendMessage() {
             guard let deviceToken = DeviceTokenManager.shared.deviceToken else {return}
+          
+            print(deviceToken)
+            do {
+                let item = PushNotification(body: messageText, deviceToken: deviceToken)
+                
+                let savedItem = try Amplify.DataStore.save(item)
+            }
+            catch let error as DataStoreError{
+                print("\(error)")
+            }
+            catch{
+                print("Damn")
+            }
+            
             
             print(messageText)
             messageText.removeAll()
-            
-            let message = Notification(body: messageText, deviceToken: deviceToken)
-            
-            Amplify.DataStore.save(message) {result in
-                switch result {
-                case .success(let savedMesssage):
-                    print("Sent", savedMesssage)
-                    DispatchQueue.main.async{ [weak self] in
-                        self?.messageText.removeAll()
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-            }
         }
         
     }

@@ -2,7 +2,7 @@
 import Amplify
 import Foundation
 
-public struct Notification: Model {
+public struct PushNotification: Model {
   public let id: String
   public var body: String?
   public var deviceToken: String?

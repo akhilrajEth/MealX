@@ -2,7 +2,7 @@
 import Amplify
 import Foundation
 
-extension Notification {
+extension PushNotification {
   // MARK: - CodingKeys 
    public enum CodingKeys: String, ModelKey {
     case id
@@ -16,20 +16,20 @@ extension Notification {
   //  MARK: - ModelSchema 
   
   public static let schema = defineSchema { model in
-    let notification = Notification.keys
+    let pushNotification = PushNotification.keys
     
     model.authRules = [
       rule(allow: .public, operations: [.create, .update, .delete, .read])
     ]
     
-    model.pluralName = "Notifications"
+    model.pluralName = "PushNotifications"
     
     model.fields(
       .id(),
-      .field(notification.body, is: .optional, ofType: .string),
-      .field(notification.deviceToken, is: .optional, ofType: .string),
-      .field(notification.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
-      .field(notification.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)
+      .field(pushNotification.body, is: .optional, ofType: .string),
+      .field(pushNotification.deviceToken, is: .optional, ofType: .string),
+      .field(pushNotification.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
+      .field(pushNotification.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)
     )
     }
 }

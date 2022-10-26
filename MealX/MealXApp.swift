@@ -34,14 +34,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 @main
 struct MealXApp: App {
 
-    /*
-    init(){
-        FirebaseApp.configure()
-    }*/
     
     init(){
+        FirebaseApp.configure()
         configureAmplify()
+
     }
+    
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var viewModel = AuthViewModel()
@@ -54,10 +53,9 @@ struct MealXApp: App {
                 
         
         WindowGroup {
-            /*WelcomeView()
+            WelcomeView()
                 .environmentObject(viewModel)
-                .environmentObject(appState)*/
-            ContentView()
+                .environmentObject(appState)
                 .onAppear(perform: notificationService.requestPermission)
 
                 
@@ -75,7 +73,7 @@ struct MealXApp: App {
             
             print("Configured Amplify")
         } catch {
-            
+            print(error)
         }
     }
 }

@@ -1,25 +1,51 @@
 {
-  "api": {
-    "MealX": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "output": {
-        "authConfig": {
-          "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 30,
-              "description": "This is an api key"
+    "api": {
+        "MealX": {
+            "service": "AppSync",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [],
+            "output": {
+                "authConfig": {
+                    "defaultAuthentication": {
+                        "authenticationType": "API_KEY",
+                        "apiKeyConfig": {
+                            "apiKeyExpirationDays": 30,
+                            "description": "api key description"
+                        }
+                    },
+                    "additionalAuthenticationProviders": [
+                        {
+                            "authenticationType": "AWS_IAM"
+                        }
+                    ]
+                }
             }
-          },
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AWS_IAM"
-            }
-          ]
         }
-      }
+    },
+    "auth": {
+        "mealx": {
+            "service": "Cognito",
+            "serviceType": "managed",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [],
+            "frontendAuthConfig": {
+                "socialProviders": [],
+                "usernameAttributes": [],
+                "signupAttributes": [],
+                "passwordProtectionSettings": {
+                    "passwordPolicyCharacters": []
+                },
+                "mfaTypes": [],
+                "verificationMechanisms": []
+            }
+        }
+    },
+    "notifications": {
+        "MealX7fRY9": {
+            "service": "Pinpoint",
+            "channels": [
+                "APNS"
+            ]
+        }
     }
-  }
 }

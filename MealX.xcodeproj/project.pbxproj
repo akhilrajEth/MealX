@@ -9,15 +9,13 @@
 /* Begin PBXBuildFile section */
 		03FC3FBC8DD8AE0C5CB55D1B /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = B188DCD57AA6A4E3182AE754 /* amplifyconfiguration.json */; };
 		31905F66B93476B6603BD5E4 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B334B4292993441BED18BC8 /* AmplifyModels.swift */; };
-		345B934D60670522F6260F3A /* Notification+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A43FE2FACB5A52F4B46881 /* Notification+Schema.swift */; };
-		7369F2156649CCD54F73D692 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B34244A9544266BA452F2 /* Notification.swift */; };
+		58F605AF81808F8FCB1B25A8 /* PushNotification+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4694BF9EEBA0E26BE0ACAB /* PushNotification+Schema.swift */; };
 		7C39F99728D8112600550205 /* EatOrderCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39F99628D8112600550205 /* EatOrderCompleteView.swift */; };
 		7C39F99928D8119900550205 /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39F99828D8119900550205 /* SellView.swift */; };
 		7C39F99D28D8154700550205 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39F99C28D8154700550205 /* ImageUploader.swift */; };
 		7C39F9A028D815CF00550205 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39F99F28D815CF00550205 /* ImagePicker.swift */; };
 		7C39F9A328D8188D00550205 /* EatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C39F9A228D8188D00550205 /* EatViewModel.swift */; };
 		7C6DD4AE28D3D3A900E8F57A /* SignUpViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6DD4AD28D3D3A900E8F57A /* SignUpViewTwo.swift */; };
-		7C6DD4B028D3D6BA00E8F57A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C6DD4AF28D3D6BA00E8F57A /* GoogleService-Info.plist */; };
 		7C6DD4B328D3D7DE00E8F57A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7C6DD4B228D3D7DE00E8F57A /* FirebaseAuth */; };
 		7C6DD4B528D3D7DE00E8F57A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7C6DD4B428D3D7DE00E8F57A /* FirebaseFirestore */; };
 		7C6DD4B728D3D7DE00E8F57A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7C6DD4B628D3D7DE00E8F57A /* FirebaseFirestoreSwift */; };
@@ -43,7 +41,9 @@
 		7CCE65DB28D2BABF003DE636 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */; };
 		7CD3013728EBB524009980DA /* PreviewScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3013628EBB524009980DA /* PreviewScreenshotView.swift */; };
 		7CD3013A28EBB689009980DA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7CD3013928EBB689009980DA /* Kingfisher */; };
+		9337F63B1FB752A00F93F406 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B105F09A0734C35E37478C87 /* PushNotification.swift */; };
 		9FE9D2B5EAF10FE72D58C439 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E2A03C2278A796AAB9922C0 /* awsconfiguration.json */; };
+		E90726BD2908553800D32F5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E90726BC2908553800D32F5D /* GoogleService-Info.plist */; };
 		E90BF36C28EE30D100CCB08C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90BF36B28EE30D100CCB08C /* AppState.swift */; };
 		E90BF37328F0922300CCB08C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90BF37228F0922300CCB08C /* LaunchScreen.storyboard */; };
 		E90BF54428FCA1A700CCB08C /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = E90BF54328FCA1A700CCB08C /* AWSAPIPlugin */; };
@@ -75,7 +75,6 @@
 		7C39F9A228D8188D00550205 /* EatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatViewModel.swift; sourceTree = "<group>"; };
 		7C4BBFC328EFC73C0090B286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7C6DD4AD28D3D3A900E8F57A /* SignUpViewTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewTwo.swift; sourceTree = "<group>"; };
-		7C6DD4AF28D3D6BA00E8F57A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C6DD4BA28D3DCC500E8F57A /* QuickSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSelectView.swift; sourceTree = "<group>"; };
 		7C6DD4C028D3E3FD00E8F57A /* SellHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellHomeView.swift; sourceTree = "<group>"; };
 		7C6DD4C228D3E43B00E8F57A /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
@@ -98,8 +97,11 @@
 		7CCE65DA28D2BABF003DE636 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		7CD3013628EBB524009980DA /* PreviewScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenshotView.swift; sourceTree = "<group>"; };
 		7E2A03C2278A796AAB9922C0 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		B105F09A0734C35E37478C87 /* PushNotification.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = PushNotification.swift; path = amplify/generated/models/PushNotification.swift; sourceTree = "<group>"; };
 		B188DCD57AA6A4E3182AE754 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
-		B3A43FE2FACB5A52F4B46881 /* Notification+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Notification+Schema.swift"; path = "amplify/generated/models/Notification+Schema.swift"; sourceTree = "<group>"; };
+		BE4694BF9EEBA0E26BE0ACAB /* PushNotification+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "PushNotification+Schema.swift"; path = "amplify/generated/models/PushNotification+Schema.swift"; sourceTree = "<group>"; };
+		E90726BB290764AA00D32F5D /* MealX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MealX.entitlements; sourceTree = "<group>"; };
+		E90726BC2908553800D32F5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E90BF36B28EE30D100CCB08C /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E90BF37228F0922300CCB08C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E90BF55428FCA35900CCB08C /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
@@ -112,7 +114,6 @@
 		E973DB1928EA09D00079C68F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E973DB1C28EA0A740079C68F /* EatOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatOrderCell.swift; sourceTree = "<group>"; };
 		E973DB1E28ECA1CF0079C68F /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
-		FA9B34244A9544266BA452F2 /* Notification.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Notification.swift; path = amplify/generated/models/Notification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +235,7 @@
 		7CCE65BE28D2B8C9003DE636 /* MealX */ = {
 			isa = PBXGroup;
 			children = (
+				E90726BB290764AA00D32F5D /* MealX.entitlements */,
 				E90BF55328FCA33F00CCB08C /* NotificationHandling */,
 				E90BF37128F091F300CCB08C /* Launch */,
 				7C4BBFC328EFC73C0090B286 /* Info.plist */,
@@ -245,8 +247,8 @@
 				7CCE65BF28D2B8C9003DE636 /* MealXApp.swift */,
 				E90BF36B28EE30D100CCB08C /* AppState.swift */,
 				7CCE65C128D2B8C9003DE636 /* ContentView.swift */,
-				7C6DD4AF28D3D6BA00E8F57A /* GoogleService-Info.plist */,
 				7CCE65C328D2B8CB003DE636 /* Assets.xcassets */,
+				E90726BC2908553800D32F5D /* GoogleService-Info.plist */,
 				7CCE65C528D2B8CB003DE636 /* Preview Content */,
 			);
 			path = MealX;
@@ -296,8 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				2B334B4292993441BED18BC8 /* AmplifyModels.swift */,
-				B3A43FE2FACB5A52F4B46881 /* Notification+Schema.swift */,
-				FA9B34244A9544266BA452F2 /* Notification.swift */,
+				BE4694BF9EEBA0E26BE0ACAB /* PushNotification+Schema.swift */,
+				B105F09A0734C35E37478C87 /* PushNotification.swift */,
 			);
 			name = AmplifyModels;
 			sourceTree = "<group>";
@@ -391,7 +393,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 7CCE65B328D2B8C9003DE636;
 			packageReferences = (
@@ -416,8 +417,8 @@
 			files = (
 				7CCE65C728D2B8CB003DE636 /* Preview Assets.xcassets in Resources */,
 				E90BF37328F0922300CCB08C /* LaunchScreen.storyboard in Resources */,
+				E90726BD2908553800D32F5D /* GoogleService-Info.plist in Resources */,
 				7CCE65C428D2B8CB003DE636 /* Assets.xcassets in Resources */,
-				7C6DD4B028D3D6BA00E8F57A /* GoogleService-Info.plist in Resources */,
 				9FE9D2B5EAF10FE72D58C439 /* awsconfiguration.json in Resources */,
 				03FC3FBC8DD8AE0C5CB55D1B /* amplifyconfiguration.json in Resources */,
 			);
@@ -466,8 +467,8 @@
 				E927A76228D8DCBE007DC49E /* SellViewModel.swift in Sources */,
 				7C92E9D428D66B7E00172CD5 /* EatOrderView.swift in Sources */,
 				31905F66B93476B6603BD5E4 /* AmplifyModels.swift in Sources */,
-				345B934D60670522F6260F3A /* Notification+Schema.swift in Sources */,
-				7369F2156649CCD54F73D692 /* Notification.swift in Sources */,
+				58F605AF81808F8FCB1B25A8 /* PushNotification+Schema.swift in Sources */,
+				9337F63B1FB752A00F93F406 /* PushNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +596,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MealX/MealX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MealX/Preview Content\"";
@@ -615,7 +617,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.karthikramu.MealX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MealX.MealX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -629,6 +631,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MealX/MealX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MealX/Preview Content\"";
@@ -649,7 +652,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.karthikramu.MealX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MealX.MealX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

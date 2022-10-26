@@ -10,6 +10,18 @@
       "StackName": "amplify-mealx-staging-194115",
       "StackId": "arn:aws:cloudformation:us-east-1:320304939783:stack/amplify-mealx-staging-194115/7fd2cb20-4d8a-11ed-a56f-0a7361ba5763",
       "AmplifyAppId": "djcnvir7xxbvn"
+    },
+    "categories": {
+      "auth": {
+        "mealx": {}
+      },
+      "notifications": {
+        "Pinpoint": {
+          "Name": "MealX7fRY9-staging",
+          "Id": "809ca3f9cf5f457bba436722fd0be7b9",
+          "Region": "us-east-1"
+        }
+      }
     }
   }
 }
